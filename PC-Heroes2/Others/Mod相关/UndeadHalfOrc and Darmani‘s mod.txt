@@ -1,0 +1,133 @@
+Heroes 2 Mod by UndeadHalfOrc and Darmani
+Comments... anostf@hotmail.com
+
+
+KNIGHT CASTLE
+Increased Peasant basic growth from 12 to 26 (total 26+2+8=36)
+Decreased Peasant gold cost from 20 to 15
+Increased Peasant speed from Very Slow to Slow
+Increased Archer/Ranger hit points from 10 to 11
+Increased Pikeman/Veteran Pikeman hit points from 15/20 to 16/21
+Increased Pikeman/Veteran Pikeman damage from 3-4 to 3-5
+Increased Pikeman/Veteran Pikeman gold cost from 200/250 to 210/260
+Increased Swordsman/Master Swordsman hit points from 25/30 to 26/31
+Increased Swordsman/Master Swordsman damage from 4-6 to 4-7
+Increased Swordsman/Master Swordsman gold cost from 250/300 to 260/310
+Increased Cavalry/Champion hit points from 30/40 to 35/45
+Increased Cavalry/Champion gold cost from 300/375 to 340/415
+Increased Paladin/Crusader hit points from 50/65 to 60/75
+Increased Paladin gold cost from 600 to 675
+Decreased Cathedral wood cost from 20 to 10
+Decreased Upg. Cathedral cost from 10 wood, 10 crystal, 5000 gold to 10 wood, 5 crystal, 3500 gold
+Decreased Fortifications wood/ore cost from 5/15 to 0/10
+
+
+BARBARIAN CASTLE
+Increased Goblin basic growth from 10 to 12 (total 12+2+8=22)
+Increased Orc hit points from 10 to 11
+Increased Wolf defense from 2 to 3
+Increased Wolf gold cost from 200 to 210
+Decreased Ogre Lord hit points from 60 to 55
+Decreased Ogre Lord gold cost from 500 to 475
+Decreased Troll/War Troll gold cost from 600/700 to 575/650
+Increased Cyclops hit points from 80 to 85
+Increased Cyclops gold cost from 750 to 800
+Decreased Pyramid ore cost from 20 to 10
+Decreased Coliseum cost from 10 wood, 10 ore, 2000 gold to 5 wood, 5 ore, 1500 gold
+
+
+SORCERESS CASTLE
+Increased Sprite basic growth from 8 to 10 (total 10+2+8=20)
+Decreased Dwarf/Battle Dwarf gold cost from 200/250 to 190/235
+Increased Elf Attack skill from 4 to 5
+Increased Grand Elf Attack skill from 5 to 7
+Increased Elf/Grand Elf hit points from 15 to 16
+Increased Greater Druid hit points from 25 to 26
+Increased Upg. Stonehenge gold cost from 1500 to 2000
+Increased Unicorn hit points from 40 to 45
+Increased Unicorn gold cost from 500 to 515
+Changed Rainbow's mercury/crystal cost from 0/10 to 5/5
+
+
+WARLOCK CASTLE
+Increased Cave ore cost from 0 to 5
+Decreased Crypt ore cost from 10 to 5
+Decreased Gargoyle defense from 7 to 6
+Increased Griffin gold cost from 300 to 320
+Decreased Hydra gold cost from 800 to 775
+Decreased Green/Red/Black Dragon basic growth from 1 to 0 (total 0+2=2)
+Decreased Red/Black Dragon hit points from 250/300 to 240/280
+Decreased Green Tower gold cost from 15000 to 13000
+Increased Red/Black Tower gold cost from 5000 to 6000
+Increased Dungeon cost from 5 wood, 10 ore, 3000 gold to 5 wood, 10 Ore, 3500 gold, and 3/3/3/3 rare
+
+
+WIZARD CASTLE
+Increased Halfling gold cost from 50 to 55
+Increased Boar damage from 2-3 to 2-4
+Increased Boar gold cost from 150 to 155
+Increased Roc defense from 7 to 8
+Decreased Upg. Ivory Tower gold cost from 4000 to 3000
+Decreased Giant/Titan basic growth from 1 to 0 (total 0+2=2)
+Increased Giant hit points from 150 to 155
+Decreased Titan hit points from 300 to 280
+Decreased Titan gold cost from 5000 to 4500
+Decreased Cloud Castle gold cost from 12500 to 7500
+Increased Upg. Cloud Castle gold cost from 12500 to 16500
+Changed Titan "Fight Value" from 22933 to 27000
+
+
+NECROMANCER CASTLE
+Decreased Skeleton gold cost from 75 to 70
+Increased Zombie speed from Very Slow to Slow
+Increases Zombie/Mutant Zombie defense from 2 to 3
+Decreased Zombie/Mutant Zombie gold cost from 150/200 to 140/190
+Increased Mummy/Royal Mummy defense from 6 to 7
+Changed Upg. Mansion cost from 5 wood, 10 crystal, 10 gems, 4000 gold to 5 wood, 10 mercury, 5 crystal, 3500 gold
+Increased Lich hit points from 25 to 30 but decreased defense from 12 to 11.
+Decreased Lich/Power Lich gold cost from 750/900 to 650/750
+Changed Upg. Mausoleum cost from 5 ore, 5 crystal, 3000 gold to 5 ore, 5 sulfur, 2500 gold
+Decreased Bone Dragon hit points from 150 to 140
+Increased Bone Dragon gold cost from 1500 to 1600
+Increased Laboratory mercury & gold cost from 5 mercury, 10000 gold to 10 mercury, 12000 gold
+
+
+COMMON BUILDINGS
+Decreased Mage Guild Lv2 rare resource cost from 4 to 2
+Decreased Mage Guild Lv3 rare resource cost from 6 to 4
+Decreased Mage Guild Lv4 rare resource cost from 8 to 6
+Decreased Mage Guild Lv5 rare resource cost from 10 to 8
+Decreased Shipyard wood cost from 20 to 15
+
+
+HEROES
+(Attack/Defense/Power/Knowledge)
+Knight    Lv 2-9: No change: 35/45/10/10
+Knight    Lv 10+: No change: 25/25/25/25
+Barbarian Lv 2-9: No change: 55/35/5/5
+Barbarian Lv 10+: No change: 25/25/25/25 (manual incorrect, it's NOT 30/30/20/20)
+Sorceress Lv 2-9: 20/15/32/33 from 20/25/25/30 from  10/10/30/50
+Sorceress Lv 10+: 25/20/25/30 from 20/25/25/30 from 20/20/30/30
+Warlock   Lv 2-9: 15/15/40/30 from 20/20/35/25 from 10/10/50/30
+Warlock   Lv 10+: No change: 20/20/30/30
+Wizard    Lv 2-9: 15/15/35/35 from 20/20/30/30 from 10/10/40/40
+Wizard    Lv 10+: No change: 20/20/30/30
+Necro     Lv 2-9: 20/20/30/30 from 25/25/25/25 from 15/15/35/35
+Necro     Lv 10+: No change: 25/25/25/25
+
+SPELLS
+Increased damage multiplier of Fireball from 10 to 13
+Increased damage multiplier of Cold Ring from 10 to 13
+Increased damage multiplier of Fireblast from 10 to 13
+Decreased cost of Fireball from 9 to 8
+Decreased cost of Cold Ring from 9 to 8
+Decreased cost of Fireblast from 15 to 14
+Increased cost of Animate Dead from 10 to 15
+Increased cost of Resurrection from 12 to 13
+Increased cost of Holy Shout from 12 to 14
+Increased cost of Chain Lightning from 15 to 20
+Increased cost of Meteor Shower from 15 to 18
+Increased cost of Elemental Storm from 15 to 20
+Increased cost of Resurrection True from 15 to 20
+Increased cost of Armageddon from 20 to 30
+Increased cost of Dimension Door from 10 to 22
