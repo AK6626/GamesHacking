@@ -1,0 +1,31 @@
+----------------------------------------------
+|Contra Hard Corps Hit Point Restoration Hack|
+----------------------------------------------
+|August 2011 by MrNemesis|
+--------------------------
+
+This is a patch for Contra Hard Corps (U) for the Sega Genesis.  In the version
+of the game that was originally released in Japan, it was possible to take three 
+hits before dying.  For unknown reasons, this functionality was removed when the 
+game was released in the US, making the game vastly more difficult in the process.  
+This patch restores the ability to take three hits, complete with the life bar .
+
+In addition, this patch does the following:
+
+-Restores the three cheat codes that were also present in the Japanese version 
+but removed from the US version.  Note, however, that unlike the Japanese version, 
+these codes are entered on controller ONE.
+
+70 lives	At the main menu, press C, B, A, Right, Left, C, B, A, Right,
+                Left, C, B, A, Right, Left.
+All weapons	Pause game play and press Up(2), Down(2), A, Up(2), Down(2), B,
+                Up(2), Down(2), C.
+Level select	At the main menu, press A, B, C, Left, Right, A, B, C, Left, 
+                Right, A, B, C, Left, Right.
+
+-Up to ten lives can be selected in the menu.  (The default is three.)
+-Player 1 and Player 2 can now select the same character.
+-A new code is available that takes you to the game's debug level! Press Left, 
+Right, Left, Right, A, B, C, B, A, Up Down.
+
+Apply the patch to your Contra Hard Corps (U) ROM with your favorite IPS patcher, and enjoy!
