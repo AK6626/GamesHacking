@@ -1,0 +1,126 @@
+.body {
+	padding: 0 10px;
+}
+
+.game {
+	display: grid;
+	width: max-content;
+	margin: 20px auto;
+}
+
+.scores {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	background-color: #7590AE;
+	padding: 6px;
+	color: #fff;
+}
+.scores span {
+	font-weight: bold;
+}
+.scores>div:last-child {
+	text-align: right;
+}
+#topScore.new {
+	animation-name: newtopscore;
+	animation-duration: 0.5s;
+	animation-iteration-count: 5;
+}
+
+@keyframes newtopscore {
+	0% {
+		color: inherit;
+	}
+
+	25% {
+		color: red;
+	}
+
+	50% {
+		color: green;
+	}
+
+	75% {
+		color: #3080D0;
+	}
+}
+
+#points {
+	color: red;
+	display: none;
+	animation: flash 0.5s ease-in infinite;
+}
+@keyframes flash {
+	0% { opacity: 0; }
+	50% { opacity: 1; }
+	100% { opacity: 0; }
+}
+
+.table {
+	display: inline-grid;
+	grid-template-columns: repeat(9, 1fr);
+	grid-template-rows: repeat(9, 1fr);
+	background: #7590AE; /*#767676; */
+	border: 1px solid #ddd;
+}
+.cell {
+	width: 36px;
+	height: 36px;
+	border: 1px solid #ddd;
+}
+.cell img {
+	margin: 2px;
+	width: 32px;
+	height: 32px;
+}
+.cell img.selected {
+	opacity: 1;
+	animation: rotate 1.5s linear infinite;
+}
+@keyframes rotate {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+#next img {
+	width: 24px;
+	margin-right: 8px;
+}
+
+.controls {
+	padding: 6px;
+	background-color: #7590AE;
+	color: #fff;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.controls div:nth-child(2) {
+	text-align: right;
+	margin-top: 22px;
+}
+
+.rules {
+	margin-bottom: 3em;
+}
+
+.rules p {
+	margin-bottom: 1em;
+}
+
+h2 {
+	line-height: 2em;
+	font-size: 130%;
+	font-weight: normal;
+}
+.screen{
+	position: absolute;
+	margin: 40px 20px;
+	display: none;
+	border: 3px solid #000;
+	background: #fff;
+	color: #333;
+	text-align: center;
+	line-height: 16px;
+	width: 300px;
+	font-size: large;
+}
