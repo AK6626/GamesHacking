@@ -1,0 +1,2609 @@
+/MegaFLE X data source file
+! : Variable-Lenght Hex 
+" : String Start-End
+& : Create Index Table
+# : Equals 1
+. : Equals 0
+/
+
+/MegaFLE X version 0.701 FINAL
+Changes from 0.6 is not listed, assuming that it won't be very useful.
+
+Complete list of changed components from 0.5.
+	eff_enem4:
+		Entry $1B:
+			Changed from: &!3B,!3C,!FF
+			To: &!3B,!3C,!42,!FF
+		Entry $1F:
+			Changed from: &!48,!FF
+			To: &!48,!54,!FF
+		Entry $30:
+			Changed from: &!42,!3B,!3C,!FF
+			To: &!3C,!42,!FF
+		Entry $46:
+			Changed from: &!4A,!42,!3B,!3C,!FF
+			To: &!3C,!42,!4A,!FF
+	Added "sprite_group"
+	Expanded MM6 enemy list from 8F to D5
+	Added "mm3_boss_spr"
+	Removed "enemyspr3" (not needed anymore, using MM3 ROM's table!)
+
+Complete list of changed components from 0.42.
+	data3:
+		Change: 0: Number of Levels
+		Addition: 65: Weapon Selected Palettes
+	data4:
+		Change: 20: Number of Scene Levels
+		Addition: 65: Weapon Selected Palettes
+	data5:
+		Change: 20: Number of Scene Levels
+		Addition: 65: Weapon Selected Palettes
+	data6:
+		Addition: 65: Weapon Selected Palettes
+	offstype:
+		Added a !0
+	datax:
+		Addition: 34: MM6: Level - Enemy Count
+	scenes_banks:
+		Added more data (for MM4 and MM5)
+	All "DataBotFeed" components:
+		Added an extra value. (Bytes between start of Low table and start of High table (If split))
+	blocktypes3, blocktypes4 and blocktypes5:
+		Added "-" lines for all 16 possible values.
+	enemy_names3:
+		Some or more names may be changed.
+	enemy_names4:
+		Alot of changes.
+	sound4:
+		A deal of changes.
+	sbdbanknames3:
+		Changed Doc Robot stage names.
+	levnames3:
+		Changed Doc Robot stage names.
+	levnames4:
+		Corrected "Pharaoman" misspelling.
+	levnames6:
+		Switched around "Yamatoman" and
+		"Tomahawkman".
+	weaponname3:
+		Added "Rush Coil", "Rush Marine" and "Rush Jet"
+	weaponname4:
+		Changed "Unused Space" to "Unused\Balloon"
+/
+
+/MegaMan 3 Offset\Specific Data/
+{data3
+!11   	/0: Number of Levels/
+!11	/1: Start of Level banks/
+!80010	/2: Start of CHR banks/
+!1B00	/3: TSA Block Tiledata/
+!1F00	/4: TSA Block Typedata/
+!1700	/5: Structure Data/
+!F00	/6: Screen Preset Data/
+!A00	/7: Screen Layout/
+!A40	/8: Direction Type/
+!A60	/9: Direction Spr-CHR\BG-Palette/
+!0	/10: ??/
+!B00	/11: LBA: Sprite Screen Position/
+!C00	/12: LBA: Sprite X Position/
+!D00	/13: LBA: Sprite Y Position/
+!E00	/14: LBA: Sprite Type/
+!A82	/15: LBA: Level Palettes/
+!1F	/16: Max Screens/
+!1F	/17: Max Screen Presets/
+!4	/18: Max Palette Presets/
+!FF	/19: Max Sprites/
+!3	/20: Number of Scene Levels/
+!A20	/21: Multi-Path Data/
+!7CD1D	/22: Music Track for each Level/
+!7	/23: # of Multi-Paths/
+!0	/24/
+!A80	/25: LBA: Chr Pointers/
+!7C8CA	/26: SBD Bank for each Level/
+!2041	/27: Sprite Palettes/
+!34111	/28: Sprite Frame Low offset Table 1/
+!36111	/29: Sprite Frame Low offset Table 2/
+!2A111	/30: Sprite Frame Low offset (bosses)/
+!34211	/31: Sprite Frame High offset Table 1/
+!36211	/32: Sprite Frame High offset Table 2/
+!2A211	/33: Sprite Frame High offset Table (bosses)/
+!33E11	/34: Sprite Coordinate Low offset Table 1/
+!29E11	/35: Sprite Coordinate Low offset Table 2/
+!33F11	/36: Sprite Coordinate High offset Table 1/
+!29F11	/37: Sprite Coordinate High offset Table 2/
+!340	/38: Sprite rom offset table 1 add/
+!360	/39: Sprite rom offset table 2 add/
+!2A0	/40: Sprite rom offset table add (bosses)/
+!320	/41: Sprite Coordinate rom offset table 1 add/
+!280	/42: Sprite Coordinate rom offset table 2 add/
+!34011	/43: Sprite Low offset table 1/
+!36011	/44: Sprite Low offset table 2/
+!2A011	/45: Sprite Low offset table (bosses)/
+!34091	/46: Sprite High offset table 1/
+!36091	/47: Sprite High offset table 2/
+!2A091	/48: Sprite High offset table (bosses)/
+!7C8A9	/49: Megaman's Palette/
+!AF0	/50: Mid\Boss-Point Offset Scrollmap/
+!AF8	/51: Mid\Boss-Point Offset Screen/
+!BC0	/52: Mid\Boss-Point Offset Sprite#/
+!12611	/53: Palette Animation Offsets/
+!1261F	/54: Palette Animation Data/
+!0	/55: -/
+!1259F	/56: Palette Animation Palettes/
+!39	/57: Number of sound ID's/
+!FF	/58: Max Enemy ID with Name/
+!D	/59: Max Palette Animations/
+!FF	/60: Palette Animation Data Space/
+!F	/61: Max Scroll Maps/
+!13	/62: Max Switchable SBD Banks/
+!411	/63: Sprite Hit Points/
+!14011	/64: Damage Data Tables begin/
+!4652   /65: Weapon Selected Palettes/
+!A50	/66: Door data 1 (relative to level bank)/
+!A58	/67: Door data 2 (relative to level bank)/
+!0	/68: Sprite bank of Mega Man's sprite/
+}
+
+/MegaMan 4 Offset\Specific Data/
+{data4
+!F	/0: Number of Levels/
+!40011	/1: Start of Level banks/
+!20011	/2: Start of CHR banks/
+!0	/3: TSA Block Tiledata/
+!400	/4: TSA Block Typedata/
+!500	/5: Structure Data/
+!900	/6: Screen Preset Data/
+!1500	/7: Screen Layout/
+!1530	/8: Direction Type/
+!1550	/9: Direction BG-Palette/
+!1560	/10: Direction Effect/
+!1100	/11: LBA: Sprite Screen Position/
+!1180	/12: LBA: Sprite X Position/
+!1200	/13: LBA: Sprite Y Position/
+!1280	/14: LBA: Sprite Type/
+!1590	/15: LBA: Level Palettes/
+!2F	/16: Max Screens/
+!1F	/17: Max Screen Presets (was 5B)/
+!8	/18: Max Palette Presets/
+!7F	/19: Max Sprites/
+!4	/20: Number of Scene Levels/
+!1540	/21: Multi-Path Data/
+!7C86C	/22: Music Track for each Level/
+!3	/23: # of Multi-Paths/
+!1300	/24: Screen: Sprite Order/
+!A80	/25: LBA: Chr Pointers/
+!3C8CA	/26: SBD Bank for each Level/
+!2041	/27: Sprite Palettes/
+!70220	/28: EnemyASMID(EnemyID)/
+!70340	/29: Sprite(EnemyID)/
+!7E00B	/30: Bank(EnemyASMID)/
+!3800	/31: Sprite Frame Low offset Table 1/
+!3900	/32: Sprite Frame Low offset Table 2/
+!3A00	/33: Sprite Frame High offset Table 1/
+!3B00	/34: Sprite Frame High offset Table 2/
+!3C00	/35: Sprite Coordinate Low offset Table 1/
+!3D00	/36: Sprite Coordinate High offset Table 1/
+!0  	/37: ??/	
+!0
+!0
+!0
+!0
+!0
+!3E00	/43: Sprite Low offset table/
+!0
+!0
+!3F00	/46: Sprite High offset table/
+!0
+!0
+!7C864	/49: Megaman's Palette/
+!AF0	/50: Mid\Boss-Point Offset Scrollmap/
+!AF8	/51: Mid\Boss-Point Offset Screen/
+!BC0	/52: Mid\Boss-Point Offset Sprite#/
+!41D3D	/53: Palette Animation Low Offsets/
+!41D7D	/54: Palette Animation High Offsets/
+!400	/55: Palette Animation Offs Add/
+!418D8	/56: Palette Animation Palette Pieces/
+!47	/57: Number of sound ID's/
+!87	/58: Max Enemy ID with Name/
+!3F	/59: Max Palette Animations/
+!BD2C	/60: Palette Animation Data End/
+!F	/61: Max Scroll Maps/
+!0	/62: Max Switchable SBD Banks/
+!703D0	/63: Sprite Hit Points/
+!41711	/64: Damage Data Tables begin/
+!79B15  /65: Weapon Selected Palettes/
+!1570	/66: Door data 1 (relative to level bank)/
+!157C	/67: Door data 2 (relative to level bank)/	
+!D	/68: Sprite bank of Mega Man's sprite/
+}
+
+/MegaMan 5 Offset\Specific Data/
+{data5
+!F	/0: Number of Levels/
+!11	/1: Start of Level banks/
+!40010	/2: Start of CHR banks/
+!D00	/3: TSA Block Tiledata/
+!1100	/4: TSA Block Typedata/
+!1200	/5: Structure Data/
+!1600	/6: Screen Preset Data/
+!900	/7: Screen Layout/
+!950	/8: Direction Type/
+!968	/9: Direction BG-Palette/
+!0	/10: -/
+!A00	/11: LBA: Sprite Screen Position/
+!A80	/12: LBA: Sprite X Position/
+!B00	/13: LBA: Sprite Y Position/
+!B80	/14: LBA: Sprite Type/
+!988	/15: LBA: Level Palettes/
+!4F	/16: Max Screens/
+!27	/17: Max Screen Presets/
+!4	/18: Max Palette Presets/
+!7F	/19: Max Sprites/
+!3	/20: Number of Scene Levels/
+!9E0	/21: Multi-Path Data/
+!3D4E3	/22: Music Track for each Level/
+!7	/23: # of Multi-Paths/
+!C00	/24: Screen: Sprite Order/
+!980	/25: LBA: Chr Pointers/
+!3D4D3	/26: SBD Bank for each Level/
+!AF	/27: Sprite Palettes/
+!37AE3	/28: EnemyASMID(EnemyID)/
+!37C03	/29: Sprite(EnemyID)/
+!3E34C	/30: Bank(EnemyASMID)/
+!0	/31: Sprite Frame Low offset Table 1/
+!100	/32: Sprite Frame Low offset Table 2/
+!200	/33: Sprite Frame High offset Table 1/
+!300	/34: Sprite Frame High offset Table 2/
+!400	/35: Sprite Coordinate Low offset Table 1/
+!500	/36: Sprite Coordinate High offset Table 1/
+!0	/37: ??/
+!0
+!0
+!0
+!0
+!0
+!600	/43: Sprite Low offset table/
+!0
+!0
+!700	/46: Sprite High offset table/
+!0
+!0
+!3D4C3	/49: Megaman's Palette/
+!AF0	/50: Mid\Boss-Point Offset Scrollmap/
+!AF8	/51: Mid\Boss-Point Offset Screen/
+!BC0	/52: Mid\Boss-Point Offset Sprite#/
+!3DD12	/53: Palette Animation Offsets/
+!3DD32	/54: Palette Animation Data/
+!0	/55: -/
+!3DC37	/56: Palette Animation Palettes/
+!15	/57: Number of sound ID's/
+!FF	/58: Max Enemy ID with Name/
+!1F	/59: Max Palette Animations/
+!91	/60: Palette Animation Data Space/
+!17	/61: Max Scroll Maps/
+!13	/62: Max Switchable SBD Banks/
+!37C93	/63: Sprite Hit Points/
+!811	/64: Damage Data Tables begin/
+!255C   /65: Weapon Selected Palettes/
+!0	/66: Door data 1 (relative to level bank)/
+!0	/67: Door data 2 (relative to level bank)/
+!12	/68: Sprite bank of Mega Man's sprite/
+}
+
+/MegaMan 6 Offset\Specific Data/
+{data6
+!F	/0: Number of Levels/
+!0	/1: Start of Level banks/
+!20010	/2: Start of CHR banks/
+!0	/3: TSA Block Tiledata (Level Bank)/
+!0	/4: TSA Block Typedata (Level Bank)/
+!0	/5: Structure Data (Level Bank)/
+!0	/6: Screen Preset Data (Variable Place in Screen Bank)/
+!0	/7: Screen Layout (Not used in MM6)/
+!0	/8: Direction Type (Not used in MM6)/
+!0	/9: Direction BG-Palette (Not used in MM6)/
+!0	/10: -/
+!0	/11: LBA: Sprite Screen Position/
+!0	/12: LBA: Sprite X Position/
+!0	/13: LBA: Sprite Y Position/
+!0	/14: LBA: Sprite Type/
+!F	/15: LBA: Level Palettes/
+!1F	/16: Max Screens/
+!1F	/17: Max Screen Presets/
+!F	/18: Max Palette Presets/
+!FF	/19: Max Sprites/
+!0	/20: ??/
+!0	/21: ??/
+!7DFB2	/22: Music Track for each Level/
+!0	/23: ??/
+!0	/24/
+!0	/25: LBA: Chr Pointers/
+!0	/26: SBD Bank for each Level (Not used in MM6)/
+!0	/27: Sprite Palettes/
+!0	/28: -/
+!0	/29: -/
+!745DA	/30: Bank(EnemyID >> 0x4)/
+!0	/31: Sprite Frame Low offset Table 1/
+!100	/32: Sprite Frame Low offset Table 2/
+!200	/33: Sprite Frame High offset Table 1/
+!300	/34: Sprite Frame High offset Table 2/
+!400	/35: Sprite Coordinate Low offset Table 1/
+!500	/36: Sprite Coordinate High offset Table 1/
+!0	
+!0
+!0
+!0
+!0
+!0
+!600	/43: Sprite Low offset table/
+!0
+!0
+!700	/46: Sprite High offset table/
+!0
+!0
+!0	/49: Megaman's Palette/
+!AF0	/50: Mid\Boss-Point Offset Scrollmap/
+!AF8	/51: Mid\Boss-Point Offset Screen/
+!BC0	/52: Mid\Boss-Point Offset Sprite#/
+!3DD12	/53: Palette Animation Offsets/
+!3DD32	/54: Palette Animation Data/
+!0	/55: -/
+!3DC37	/56: Palette Animation Palettes/
+!15	/57: Number of sound ID's/
+!FF	/58: Max Enemy ID with Name/
+!1F	/59: Max Palette Animations/
+!91	/60: Palette Animation Data Space/
+!0	/61: Max Scroll Maps/
+!13	/62: Max Switchable SBD Banks/
+!0	/63: Sprite Hit Points/
+!0	/64: Damage Data Tables begin/
+!0   	/65: Weapon Selected Palettes/
+!0	/66: Door data 1 (relative to level bank)/
+!0	/67: Door data 2 (relative to level bank)/
+!10	/68: Sprite bank of Mega Man's sprite/
+}
+
+/0=definitive 1=level relative 2=SBD relative/
+{offstype
+!0,!0,!0,!2,!2,!2,!2,!1 	/0-7/
+!1,!1,!1,!1,!1,!1,!1,!1	/8-15/
+!0,!0,!0,!0,!0,!1,!0,!0	/16-23/
+!1,!1,!0,!0,!0,!0,!0,!0	/24-31/
+!0,!0,!0,!0,!0,!0,!0,!0	/32-39/
+!0,!0,!0,!0,!0,!0,!0,!0	/40-47/
+!0,!0,!1,!1,!1,!0,!0,!0	/48-55/
+!0,!0,!0,!0,!0,!0,!0,!0	/56-63/
+!0,!0,!1,!1,!0		/64->/
+}
+
+{datax
+!2211	/0: MM3: Sprite CHR Set Data/
+!39	/1: MM3: Max Sprite CHR Set/
+!51811	/2: MM4: Level Init Data - Low Offset/
+!51881	/3: MM4: Level Init Data - High Offset/
+!500	/4: MM4: LID - Offset Add/
+!53811	/5: MM4: Effect Data - Low Offset/
+!53871	/6: MM4: Effect Data - High Offset/
+!520	/7: MM4: ED - Offset Add/
+!704FE	/8: MM4: Effect Sprite - Palette Slot/
+!7052E	/9: MM4: Effect Sprite - Palette Animation ID (>=$80) or Extra Palette ID (<=$7F)/
+!7055E	/10: MM4: Effect Sprite - Extra Palettes/
+!4F	/11: MM4: Max Effects/
+!37DC3	/12: MM5: Effect Sprite - Reference Data/
+!37DF3	/13: MM5: Effect Sprite - Reference Data 2/
+!3F	/14: MM5: Max Sprite Palette Sets/
+!37E23	/15: MM5: Effect Sprite - Extra Palettes/
+!37E67	/16: MM5: Effect Sprite - CHR Bank Data/
+!3DDC4	/17: MM5: CHR Animation Offsets/
+!3DDCC	/18: MM5: CHR Animation Data/
+!A0	/19: MM4: NES Memory PRG-ROM Bank of Palette Animaions (High byte)/
+!7DF62	/20: MM6: Level - Graphics Bank/
+!7DF32	/21: MM6: Level - Screen Bank/
+!7DF72	/22: MM6: Level - Graphics Bank - TSA Block Data - Start Hi MEM Ptr/
+!7DF52	/23: MM6: Level - Screen Bank - Start Hi MEM Ptr/
+!7DF82	/24: MM6: Level - Graphics Bank - Structure Data - Start Hi MEM Ptr/
+!7DFA2	/25: MM6: Level - Initial Palette Set ID/
+!7DF92	/26: MM6: Level - CHR Load ID/
+!6E011	/27: MM6: Offset of CHR Load Data/
+!0	/28: MM3: Sprite CHR Bank 0 (00-3F) to load initially/
+!1	/29: MM3: Sprite CHR Bank 1 (40-7F) to load initially/
+!9	/30: MM6: Palette Set to load initially (MM's body\face standard palette)/
+!7C8BC	/31: MM4: Mid-Point Data Offset (all levels)/
+!7C89C	/32: MM4: Mid-Point Screen Position Data (all levels)/
+!2F17A	/33: MM5: Mid-Point Data (all levels)/
+!740F0	/34: MM6: Level - Enemy Count/
+!311	/35: MM3: Initial Sprite ID for each Enemy ID/
+!200E4	/36: MM3: Boss door (open) tiles/
+!20174	/37: MM3: Boss door (open) attribute/
+!202C1	/38: MM3: Boss door (close) tiles/
+!20351	/39: MM3: Boss door (close) attribute/
+!3D242	/40: MM5: Boss door open data/
+!3D2C2	/41: MM5: Boss door close data/
+!6F	/42: MM4: Max Primary Graphics Load/
+!12921	/43: MM3: CHR Animation Offsets/
+!12931	/44: MM3: CHR Animation Data/
+}
+
+{scenes_banks
+& !E, !10, !13, !1E
+& !10, !11, !12, !13, !14
+& !B, !F, !10, !11
+}
+
+/Format:
+Megaman 3 & 5:
+!Screen, !Offset of CHR Pointer 1, !Offset of CHR Pointer 2, !Offset of Palette
+
+Megaman 4:
+!Screen, !rom offset containing Primary Graphics Load Id, !Prevent change of Graphics Load Id? (use 1 to prevent), !Offset of Palette
+Change of Graphics Load Id is in some cases prevented because the value also changes other things.
+/
+
+{scenes_data3
+& !0, !166D1,!166D2,!166A5
+  /!1, !166D1,!166D2,!30010/
+  !2, !166C5,!166C6,!16665
+  !FF
+& !0, !7C4A5,!7C4A8,!1866E
+  !7, !31D56,!31D57,!31D26
+  !8, !3C326,!3C327,!20ABA
+  !10, !7C4A5,!7C4A8,!1866E
+  !FF
+& !0, !31C07,!31C08,!31C13
+  !1, !31C07,!311D2,!31C43
+  !2, !31C07,!31C08,!31C53
+  !3, !31C07,!311D2,!31C43
+  !5, !166CB,!166CC,!16685
+  !10, !31C07,!31C08,!31C13
+  !11, !31C07,!31C08,!31C23
+  !14, !31C07,!311D2,!31C43
+  !FF
+& !0, !3C320,!3C321,!3CA92
+  !1, !3C322,!3C323,!3CA92
+  !2, !3C324,!3C325,!3CAA6
+  !FF
+}
+
+{scenes_data4
+& !0, !72860,!1,!7277E /change flag ok/
+  !1, !7285E,!1,!7273E /change flag ok/
+  !2, !72860,!1,!735A6 /change flag ok/
+  !3, !7965D,!0,!79AF3 /change flag ok/
+  !4, !724C9,!0,!7279E /change flag ok/
+  !FF
+& !0, !72CE3, !0, !732EF /change flag ok/
+  !1, !72F6E, !0, !73519 /change flag ok/
+  !2, !7285F, !1, !7275E /change flag ok/
+  !FF
+& /change flags ok/ 
+  !0, !72128, !0, !727DE
+  !1, !730EE, !0, !733A1
+  !2, !7240F, !0, !733A1
+  !FF
+& /change flags ok/
+  !0, !36E9B, !0, !36905
+  !1, !36F4A, !0, !36925
+  !2, !3700D, !0, !36945 
+  !3, !370CA, !0, !36965 /note: 3 should be faded up train palette, not sure how to implement it because the colors
+			are loaded by a palette animation/
+  !FF
+& /change flags ok/ 
+  !0, !36028, !0, !36885
+  !1, !36153, !0, !368A5
+  !FF
+}
+
+{scenes_data5
+& !0, !1840B,!1840C,!1840D
+  !1, !1841D,!1841E,!1840D
+  !2, !1842F,!18430,!18431
+  !3, !18441,!18442,!18443
+  !FF
+& !0, !2EB84,!2EB85,!2EB8A
+  !1, !2EBF6,!2EBF7,!2EBFC
+  !2, !2EBAA,!2EBAB,!2EBB0
+  !3, !2E2BF,!2E2C3,!2EC42
+  !FF
+& !0, !2534,!2535,!253A
+  !1, !2EBD0,!2EBD1,!2EBD6
+  !2, !1C4EA,!1C4EB,!1C4EC
+  !FF
+& !0, !2F844,!2F845,!2F846
+  !1, !2F832,!2F833,!2F834
+  !FF
+}
+
+/DataBot Feed - Megaman 6 enemy data/
+{mm6enemdatabot
+!74010	/ROM pointer of Bank/
+!80		/High Byte of Memory Segment that Bank is loaded onto/
+!80BF		/Memory Pointer of Pointer Table/
+!10		/Number of Table Entries/
+!1		/Is High and Low bytes split? 1 = Yes, 0 = No/
+!A000		/End of related Data - Memory Pointer/
+!0		/Free Space (Initial Setting)/
+!0		/Current Entry (Initial Setting)/
+!10		/Bytes between start of Low table and start of High table (If split)/
+}
+
+/DataBot Feed - Megaman 6 Palette Data (Regular Bank)/
+{mm6paldatabot
+!6E010	/ROM pointer of Bank/
+!80		/High Byte of Memory Segment that Bank is loaded onto/
+!9000		/Memory Pointer of Pointer Table/
+!100		/Number of Table Entries/
+!1		/Is High and Low bytes split? 1 = Yes, 0 = No/
+!A000		/End of related Data - Memory Pointer/
+!0		/Free Space (Initial Setting)/
+!0		/Current Entry (Initial Setting)/
+!100		/Bytes between start of Low table and start of High table (If split)/
+}
+
+/DataBot Feed - Megaman 6 Palette Data (Secondary Bank)/
+{mm6pal2databot
+!50010	/ROM pointer of Bank/
+!80		/High Byte of Memory Segment that Bank is loaded onto/
+!9000		/Memory Pointer of Pointer Table/
+!100		/Number of Table Entries/
+!1		/Is High and Low bytes split? 1 = Yes, 0 = No/
+!A000		/End of related Data - Memory Pointer/
+!0		/Free Space (Initial Setting)/
+!0		/Current Entry (Initial Setting)/
+!100		/Bytes between start of Low table and start of High table (If split)/
+}
+
+/DataBot Feed - Megaman 4 Primary Graphics Load Data/
+{mm4ichrload
+!50010	/ROM pointer of Bank/
+!A0		/High Byte of Memory Segment that Bank is loaded onto/
+!B800		/Memory Pointer of Pointer Table/
+!70		/Number of Table Entries/
+!1		/Is High and Low bytes split? 1 = Yes, 0 = No/
+!C000		/End of related Data - Memory Pointer/
+!0		/Free Space (Initial Setting)/
+!6F		/Current Entry (Initial Setting)/
+!70		/Bytes between start of Low table and start of High table (If split)/
+}
+
+/DataBot Feed - Megaman 4 Scroll Graphics Load Data/
+{mm4chrload
+!52010	/ROM pointer of Bank/
+!A0		/High Byte of Memory Segment that Bank is loaded onto/
+!B800		/Memory Pointer of Pointer Table/
+!50		/Number of Table Entries/
+!1		/Is High and Low bytes split? 1 = Yes, 0 = No/
+!C000		/End of related Data - Memory Pointer/
+!0		/Free Space (Initial Setting)/
+!4F		/Current Entry (Initial Setting)/
+!60		/Bytes between start of Low table and start of High table (If split)/
+}
+
+{blocktypes3
+&"BackGround"
+&"Wall"
+&"Ladder"
+&"Shock"
+&"LadderTop"
+&"Spikes"
+&"ForeGround"
+&"Enemy"
+&"Water"
+&"-"
+&"-"
+&"Slippery Floor"
+&"-"
+&"-"
+&"-"
+&"-"
+}
+
+{blocktypes4
+&"BackGround"
+&"Wall"
+&"Ladder"
+&"Spikes"
+&"LadderTop"
+&"Doors"
+&"Water"
+&"Hidden"
+&"Glide Right"
+&"Shootable"
+&"Glide Left"
+&"Slippery"
+&"Special"
+&"-"
+&"-"
+&"-"
+}
+
+{blocktypes5
+&"BackGround"
+&"Wall"
+&"Ladder"
+&"Special"
+&"LadderTop"
+&"Glide Right"
+&"ForeGround"
+&"Glide Left"
+&"Water"
+&"-"
+&"-"
+&"-"
+&"-"
+&"-"
+&"-"
+&"Spikes"
+}
+
+{blocktypes6
+&"BackGround"
+&"Wall"
+&"?"
+&"LadderTop"
+&"Ladder"
+&"Ice"
+&"ForeGround"
+&"FG Wall"
+&"Water"
+&"FG (Muddy)"
+&"?"
+&"?"
+&"?"
+&"?"
+&"?"
+&"Spikes"
+}
+
+/Megaman 3 Boss Sprites - All Enemy ID's listed here will use the Boss Sprite Bank ($2A010->)/
+/End value is $100/
+/note: actually used in 701/
+{mm3_boss_spr
+!47,!48,!49,!4A,!4B,!4C,!4D,!4E
+!5E,!5F
+!68,!69,!6A,!6B,!6C,!6D,!6E,!6F
+!79,!7A,!7B,!7C,!7D,!7E,!7F,!80,!81,!82,!83,!84,!85,!86,!87,!88,!89
+!100
+}
+
+{enemy_chrbank0
+!A,!A,!0,!0,!0,!13,!0,!0,!8,!0,!0,!0,!13,!13,!0,!0
+!0,!0,!0,!15,!13,!13,!0,!0,!0,!0,!0,!0,!0,!0,!0,!11
+!C,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!10,!0,!C,!0,!0
+!0,!0,!0,!0,!0,!0,!0,!0,!8,!0,!0,!F,!0,!0,!1D,!0
+!0,!0,!0,!0,!0,!0,!0,!2A,!2E,!32,!27,!26,!2C,!32,!2E,!0
+!0,!0,!0,!0,!0,!0,!0,!26,!32,!32,!15,!0,!0,!0,!0,!0
+!0,!0,!0,!0,!C,!C,!0,!0,!20,!20,!20,!20,!20,!20,!20,!20
+!0,!0,!24,!24,!0,!24,!0,!0,!1D,!0,!3C,!0,!0,!0,!0,!0
+!0,!13,!3C,!0,!0,!0,!0,!0,!0,!0,!C,!0,!0,!0,!0,!0
+}
+{enemy_chrbank1
+!0,!0,!14,!B,!19,!0,!14,!0,!0,!9,!9,!14,!0,!0,!E,!18
+!0,!3B,!D,!1A,!0,!0,!18,!0,!16,!0,!E,!10,!E,!12,!12,!16
+!0,!16,!19,!19,!16,!18,!D,!35,!0,!0,!0,!0,!E,!0,!0,!10
+!0,!18,!E,!0,!0,!0,!17,!17,!0,!17,!17,!0,!9,!18,!1F,!0
+!0,!0,!0,!0,!0,!0,!0,!2B,!28,!33,!29,!31,!2D,!30,!2F,!0
+!0,!0,!0,!0,!0,!0,!E,!0,!0,!0,!17,!0,!1B,!18,!3A,!3A
+!10,!10,!35,!3B,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0
+!25,!25,!0,!0,!35,!25,!25,!25,!0,!37,!37,!0,!37,!37,!0,!0
+!0,!39,!3D,!3D,!3D,!3D,!3D,!3D,!3D,!3D,!0,!0,!0,!0,!0,!0
+}
+{enemy_chrbank1x
+!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0
+!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0
+!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0
+!0,!0,!0,!0,!0,!0,!18,!0,!0,!0,!0,!0,!0,!0,!0,!0
+!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0
+!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0
+!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0
+!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0
+!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0,!0
+}
+
+{greenframe4
+!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.
+!.!.!.!.!.!.!#!#!.!.!#!.!.!.!.!.
+!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.
+!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.
+!.!.!.!.!#!.!.!.!.!.!.!.!.!.!.!.
+!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.
+!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.
+!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.
+!.!.!.!#!.!.!#!#!.!.!.!.!.!.!.!.
+!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.
+!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.
+!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.
+}
+
+{greenframe5
+
+!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.
+!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.
+!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.
+!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.
+!#!#!#!#!#!#!#!#!#!#!#!#!.!#!.!#
+!#!#!#!#!#!#!.!#!#!.!.!#!.!.!.!.
+!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.
+!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.
+!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.
+!.!#!#!#!.!.!.!.!.!.!.!.!.!.!#!#
+!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.
+!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.!.
+}
+
+/format: 
+	&"Title string"
+	&!Enemy_Id, !X_coordinate, !Y_coordinate
+	!Enemy_Id2, !X_coordinate2, !Y_coordinate2
+	...
+	!100 <- tells to end data for this sprite group
+	&"Title string 2"
+	...
+	&!0 <- tells there are no more groups
+/
+
+{sprite_group3
+&"MM3: Giant Snake"
+&!66, !68, !90
+!66, !78, !98
+!66, !88, !90
+!66, !98, !88
+!66, !A8, !90
+!66, !B8, !98
+!66, !C8, !90
+!66, !D8, !88
+!67, !E4, !50
+!70, !D0, !27
+!71, !D8, !3F
+!100
+&"MM3: Giant Cat"
+&!77, !A0, !00
+!72, !89, !43
+!73, !8C, !53
+!75, !C7, !3F
+!76, !AC, !2F
+!100
+&"MM3: Wily Stage 1 Boss"
+&!5E, !50, !2C
+!5F, !80, !E8
+!100
+&"MM3: Wily Stage 5 Battle"
+&!82, !80, !4F
+!83, !80, !98
+!88, !48, !7B
+!89, !B8, !7B
+!84, !48, !A0
+!84, !B8, !A0
+!85, !48, !7B
+!86, !B8, !7B
+!87, !80, !4F
+!100
+&"MM3: Wily Stage 6 Battle"
+&!7A, !80, !43
+!7C, !80, !3F
+!7D, !80, !3F
+!7B, !D0, !50
+!79, !80, !8F
+!7E, !10, !D0
+!7F, !40, !C0
+!80, !80, !C0
+!100
+& !0
+}
+
+{sprite_group4
+&"MM4: Hippo"
+&!18, !B8, !DC
+ !19, !B8, !44
+ !1A, !B8, !75
+ !1A, !B8, !85
+ !1A, !B8, !95
+ !1A, !B8, !A5
+ !1A, !B8, !B5
+ !100
+&"MM4: Whale (Moby)"
+&!38, !B0, !0
+ !37, !B0, !6F
+ !39, !B0, !6F
+ !3A, !B0, !6F
+ !83, !B0, !78
+ !100
+&"MM4: Cossack Stage 1 Boss"
+&!57, !80, !6C
+ !58, !80, !50
+ !59, !80, !50
+ !100
+&"MM4: Cossack Stage 2 Boss"
+&!61, !80, !37
+ !62, !60, !50
+ !62, !A0, !80
+ !63, !38, !67
+ !63, !C8, !67
+ !64, !38, !27
+ !64, !C8, !27
+ !66, !80, !17
+ !65, !38, !9F
+ !65, !C8, !9F
+ !66, !80, !A7
+ !100
+&"MM4: Cossack Stage 3 Boss"
+&!69, !C0, !30
+ !1C, !20, !88
+ !1C, !E0, !88
+ !100
+&"MM4: Battle with Cossack"
+&!5E, !C0, !2F
+ !5F, !C0, !57
+ !60, !C0, !2F
+ !100
+&"MM4: Wily Stage 1 Boss"
+&!6C, !B8, !AB
+ !6D, !B8, !AB
+ !100
+&"MM4: Wily Stage 2 Boss"
+&!6F, !AC, !4E
+ !70, !C8, !34
+ !1B, !C8, !78
+ !71, !32, !80
+ !71, !62, !40
+ !100
+&"MM4: Rematch Room Warps"
+&!74, !20, !44
+ !74, !20, !84
+ !74, !20, !C4
+ !74, !70, !C4
+ !74, !90, !C4
+ !74, !E0, !44
+ !74, !E0, !84
+ !74, !E0, !C4
+ !100
+&"MM4: Wily Stage 3 Boss"
+&!50, !C0, !C0
+ !53, !A0, !C0
+ !55, !C0, !0
+ !55, !DC, !0
+ !100
+& !0
+}
+
+{sprite_group5
+&"MM5: Wily Stage 1 Boss"
+&!59, !D4, !52
+!5B, !D8, !90
+!5B, !D8, !B0
+!5A, !D8, !70
+!100
+&"MM5: Wily Stage 2 Boss"
+&!5C, !80, !58
+!100
+&"MM5: Rematch Room Warps"
+&!70, !20, !30
+!70, !20, !70
+!70, !20, !B0
+!70, !80, !70
+!70, !80, !B0
+!70, !E0, !30
+!70, !E0, !70
+!70, !E0, !B0
+!70, !80, !30
+!100
+& !0
+}
+
+{sprite_group6
+& !0
+}
+
+{enemy_names3
+&"Jumping Spark"
+&"Airborn Head"
+&"Pellet Head Shooter"
+&"Hammer Joe"
+&"e04"
+&"e05"
+&"Bullet Cloud"
+&"-"
+&"Mosquito"
+&"Metool"
+&"Launcher Cannon"
+&"Cloud Platform"
+&"e0C"
+&"e0D"
+&"Submarine (2)"
+&"Magnet Guy"
+&"-"
+&"Trash/Rock Thrower"
+&"Bulldozer Metool"
+&"Fly"
+&"e14"
+&"e15"
+&"Magnet Force (Left)"
+&"-"
+&"Space Explorer"
+&"-"
+&"Submarine"
+&"Hedgehog"
+&"Penguin (Handle)"
+&"Gorilla"
+&"Gorilla 2 (Unused)"
+&"Momma Wasp"
+&"Bolt"
+&"Floor Trap"
+&"Needle (Up)"
+&"Needle (Down)"
+&"Sparker"
+&"Magnet Animation (Left)"
+&"Hopper"
+&"Top Platform"
+&"Enable CHR Animation (Y = 80+)"
+&"Disable CHR Animation (Y = 00)"
+&"-"
+&"-"
+&"Fish"
+&"Sparkman Platforms"
+&"-"
+&"-"
+&"-"
+&"Magnet Animation (Right)"
+&"Pole (Flying Up)"
+&"Megaman Replicator Boss"
+&"-"
+&"-"
+&"Robot Eye"
+&"Walking Bomb"
+&"Parachute Guy"
+&"Dark Bulb (static)"
+&"Dark Bulb"
+&"Penguin"
+&"Flying Metool"
+&"Magnet Force (Right)"
+&"Protoman (battle)"
+&"-"
+&"-"
+&"-"
+&"-"
+&"-"
+&"-"
+&"-"
+&"-"
+&"Needleman"
+&"Magnetman"
+&"Geminiman"
+&"Hardman"
+&"Topman"
+&"Snakeman"
+&"Sparkman"
+&"Shadowman"
+&"Megaman Sprite"
+&"Large Energy Capsule"
+&"Small Energy Capsule"
+&"Big Weapon Capsule"
+&"Small Weapon Capsule"
+&"E-Box"
+&"Extra Life"
+&"Random Container"
+&"Giant Metool"
+&"Wheel (Left)"
+&"Wheel (Right)"
+&"Trap Platform"
+&"-"
+&"Missile Launcher"
+&"Wall"
+&"Wily 1 Boss"
+&"Wily 1 Boss (Currents)"
+&"Snake Head"
+&"Snake Head (upsidedown)"
+&"Top Guy"
+&"Piece of Trash"
+&"Sparking Trap"
+&"Sparking Trap (Wide)"
+&"Giant Snake (Body)"
+&"Giant Snake (Init)"
+&"Doc/Flashman"
+&"Doc/Bubbleman"
+&"Doc/Quickman"
+&"Doc/Woodman"
+&"Doc/Crashman"
+&"Doc/Airman"
+&"Doc/Metalman"
+&"Doc/Heatman"
+&"Giant Snake (Eye)"
+&"Giant Snake (Mounth)"
+&"Giant Cat (Eyes)"
+&"Giant Cat (Body)"
+&"Seal (Geminiman Stage)"
+&"Giant Cat (Tail)"
+&"Giant Cat (Body2)"
+&"Giant Cat (Init)"
+&"Protoman (Opens Geminiman Seal)"
+&"Wily Battle 2 Spr. A"
+&"Wily Battle 2 Spr. B"
+&"Wily Battle 2 Spr. C"
+&"Wily Battle 2 Spr. D"
+&"Wily Battle 2 Spr. E"
+&"Wily Battle 2 Spr. F"
+&"Wily Battle 2 Spr. G"
+&"Wily Battle 2 Spr. H"
+&"Black Devil Boss"
+&"Wily Battle 1 Spr. A"
+&"Wily Battle 1 Spr. B"
+&"Wily Battle 1 Spr. C"
+&"Wily Battle 1 Spr. D"
+&"Wily Battle 1 Spr. E"
+&"Wily Battle 1 Spr. F"
+&"Wily Battle 1 Spr. G"
+&"Wily Battle 1 Spr. H"
+&"Teleporter"
+}
+
+{enemy_names4
+&"Ladybug Copter"
+&"Hover"
+&"Slinky"
+&"Scorpion"
+&"Grasshopper"
+&"Rocket Bird"
+&"Wall Gun (Left-pointed)"
+&"Wall Gun (Right-pointed)"
+&"Rainbow Bar A"
+&"Rainbow Bar B"
+&"Rainbow Bar C"
+&"Rainbow Bar D"
+&"Rainbow Bar 2A"
+&"Rainbow Bar 2B"
+&"Rainbow Bar 2C"
+&"Rainbow Bar 2D"
+&"Lightbulb Bot"
+&"Rat"
+&"Whapper"
+&"Desert Fly"
+&"Umbrella Guard"
+&"Fireworks Bot"
+&"Eff: Water (1)"
+&"Eff: Water (2)"
+&"Hippo (Nose)"
+&"Hippo (Ears)"
+&"Hippo (Platform Block)"
+&"Wily Stage 2 Boss (1B)"
+&"Platform (Cossack 3 Boss)"
+&"0"
+&"Snail Robot (Warp)"
+&"Snail Robot (Top)"
+&"Snail Robot (Tail)"
+&"21"
+&"0"
+&"0"
+&"0"
+&"0"
+&"0"
+&"27"
+&"Brightman Platform (Red)"
+&"Wall (Small)"
+&"Wall (Medium) Unused"
+&"Wall (Large) Unused"
+&"0"
+&"Blade Spinner"
+&"Super Ball Machine (Left)"
+&"Super Ball Machine (Right)"
+&"Falling Boulder"
+&"Eddie (Moving)"
+&"Eddie (Non-Moving)"
+&"Jumbig"
+&"Shield Attacker"
+&"Appearing Blocks (Wily 1)"
+&"Totempole"
+&"Whale (Propel)"
+&"Whale (Warp)"
+&"Whale (39)"
+&"Whale (3A)"
+&"Metool (Walking)"
+&"Metool (Jumping)"
+&"Switch (Unused variant)"
+&"0"
+&"0"
+&"40"
+&"Switch (Show 'Hidden' Blocks)"
+&"Metool (Spinning)"
+&"0"
+&"Eff: Up/Down Roof"
+&"M422A"
+&"Skullmet (Right)"
+&"Amoeba"
+&"Skeleton Joe"
+&"Saturn Bot"
+&"Water Metool"
+&"Skullmet (Left)"
+&"Helipon"
+&"Piranha"
+&"Skuller Launcher"
+&"Assembling Block"
+&"Wily Stage 3 Battle (50)"
+&"Wall Wheel (Left)"
+&"Wall Wheel (Right)"
+&"Wily Stage 3 Battle (53)"
+&"Spike Box (from Right)"
+&"Wily Stage 3 Battle (55)"
+&"E-Tank"
+&"Cossack 1 Boss (57)"
+&"Cossack 1 Boss (Arrow)"
+&"Cossack 1 Boss (Eyes)"
+&"Large Health Capsule"
+&"Small Health Capsule"
+&"Battonton"
+&"Mantan"
+&"Cossack Battle Sprite"
+&"Cossack Battle (Cranes)"
+&"Cossack Battle (Lights)"
+&"Cossack 2 Boss (Eye)"
+&"Cossack 2 Boss (Platforms)"
+&"Cossack 2 Boss (V Wall)"
+&"Cossack 2 Boss (UC Wall)"
+&"Cossack 2 Boss (LC Wall)"
+&"Cossack 2 Boss (H Wall)"
+&"Mummy Mauler"
+&"Worm"
+&"Cossack 3 Boss"
+&"Sinking Platform (Cossack 3)"
+&"Mono-Roader"
+&"Giant Metool Boss (Eyes)"
+&"Giant Metool Boss (Cross)"
+&"Gachappon"
+&"Wily Stage 2 Boss (Light)"
+&"Wily Stage 2 Boss (70)"
+&"Wily Stage 2 Boss (Platform)"
+&"Pakatto 24"
+&"Up'n'Down"
+&"Warp"
+&"Shifting Spike Block (1)"
+&"Shifting Spike Block (2)"
+&"Water Mine"
+&"Spark Spine"
+&"Robot Master (All 8)"
+&"Large Weapon Energy"
+&"Small Energy Energy"
+&"Extra Life"
+&"Balloon Adapter"
+&"Wire Adapter"
+&"Wily Final Battle"
+&"Block Platform"
+&"Ladder Press (Left)"
+&"Brightman Platform (Green)"
+&"Whale (Init)"
+&"Ladder Press (Right)"
+&"Spike Box (from Left)"
+&"Snail Robot (86)"
+&"Spikes (Diveman stage)"
+}
+
+{enemy_names5
+&"Ballhead Guy"
+&"Spike Drop Guy"
+&"Skull Dropper"
+&"Space Metool"
+&"Tiger"
+&"Rat"
+&"Flying Shield"
+&"Bomb Dropper"
+&"Cannon Metool"
+&"Steam-engine Metool"
+&"Falling Crystal"
+&"Water Mine"
+&"Robot Giant"
+&"Flying Cannon Sniper"
+&"Chainball (Down)"
+&"Chainball (Up)"
+&"Pit Guard"
+&"Comet Effect"
+&"Drop Capsule"
+&"Water Hole"
+&"Shielded Shooter"
+&"Dust Guy"
+&"Ball Thrower"
+&"Scooter Sniper"
+&"Crystal Aimer"
+&"Gravity Aimer"
+&"Gravity Aimer (Down-up)"
+&"Missile Giant"
+&"Falling Bowl"
+&"Cannon"
+&"Lazer Giant"
+&"Lazer Giant 2"
+&"Platform (Up)"
+&"Platform (Up-Right)"
+&"Platform (Right)"
+&"Platform (Down-Right)"
+&"Platform (Down)"
+&"Platform (Down-Left)"
+&"Platform (Left)"
+&"Platform (Up-Left)"
+&"Scooter Sniper (Behind)"
+&"Water Metool"
+&"Spiral Neck"
+&"Bumping Shooter"
+&"Catapult Guy"
+&"Wheel (Right)"
+&"Wheel (Left)"
+&"Wheel (Right) 2"
+&"Wheel (Left) 2"
+&"Metool"
+&"Platform Mine"
+&"e33"
+&"e34"
+&"Stone Thrower"
+&"Moving Shell-Guy"
+&"Napalm Missile"
+&"Sorrounder"
+&"Fowl"
+&"Fish"
+&"Hidden Cannon"
+&"Wheel (Left) 3"
+&"Wheel (Right) 3"
+&"Wheel (Left) 4"
+&"Moving Shell-Guy 2"
+&"Warp (Chargeman)"
+&"Pipe Ride (Waveman)"
+&"Gravity: Normal (Smal)"
+&"Gravity: Down-Up (Smal)"
+&"Gravity: Down-Up (Tall)"
+&"Gravity: Down-Up (Tall)"
+&"Gravity: Normal (Horz)"
+&"BG Up\Down (Starman)"
+&"Elevator 1 (Gyroman)"
+&"Elevator 2 (Gyroman)"
+&"Bubbles (Waveman)"
+&"BG Up\Down 2 (Wily 1)"
+&"Huge Drills (Napalmman)"
+&"Train BG (Chargeman)"
+&"Scooter (Waveman)"
+&"Invisible Spikes"
+&"Waveman Miniboss"
+&"Floor (Starman)"
+&"Floor 2 (Starman)"
+&"Floor 3 (Starman)"
+&"Long Floor (Unused)"
+&"Blocks (Darkman 3)"
+&"Blocks p2 (Darkman 3)"
+&"Blocks Pattern"
+&"Wily Boss 1"
+&"Wily Boss 1 (Head)"
+&"Wily Boss 1 (Wheel)"
+&"Wily Boss 2"
+&"e5C"
+&"Wily 1"
+&"Darkman (Final)"
+&"Wily 2"
+&"Walking Wheel"
+&"Slow-Flying Searcher"
+&"Stoneman"
+&"Chargeman"
+&"Gyroman"
+&"Gravityman"
+&"Crystalman"
+&"Waveman"
+&"Napalmman"
+&"Starman"
+&"Darkman (Shield)"
+&"Darkman (Heavy Gun)"
+&"Darkman (Tanks)"
+&"-"
+&"-"
+&"-"
+&"Beatup Room Warp"
+&"Large Energy Caps. (Warp)"
+&"Dr.Light"
+&"-"
+&"-"
+&"-"
+&"-"
+&"-"
+&"-"
+&"-"
+&"-"
+&"-"
+&"-"
+&"-"
+&"-"
+&"Wheel (Right) 4"
+&"Eddie"
+&"'E' Container"
+&"'M' Container"
+&"Extra Life"
+&"Large Energy Capsule"
+&"Smal Energy Capsule"
+&"Large Weapon Capsule"
+&"Smal Weapon Capsule"
+&"'M' Letter"
+&"'E' Letter"
+&"'G' Letter"
+&"'A' Letter"
+&"'M' Letter (char 5)"
+&"'A' Letter (char 6)"
+&"'N' Letter"
+&"'V' Letter"
+&"Walking Gravityman (?)"
+&"Wily Chase Scene"
+&"Wily Chase (Pal. Switch)"
+&"Wily Chase (Pal.Sw. 2)"
+&"-"
+&"-"
+&"-"
+&"Megaman Sprite (?)"
+&"Darkman Battle (Heavy Gun)"
+&"Napalmman Missile"
+&"-"
+&"Wily's Defeat Scene"
+&"Moving Feet Megaman (?)"
+&"Walking Megaman"
+&"Invisible Wall"
+&"Invisible Wall (2)"
+&"-"
+&"-"
+&"Aiming Megaman (1)"
+&"-"
+&"Aiming Megaman (2)"
+&"-"
+&"Aiming Megaman (BG)"
+&"-"
+&"Water Hole (Strange)"
+&"-"
+&"-"
+&"-"
+&"Enemy Defeated Explosion"
+&"-"
+&"-"
+&"-"
+&"-"
+&"-"
+&"-"
+&"-"
+&"-"
+&"-"
+&"-"
+&"-"
+&"-"
+&"Barrier Shld's (Darkman)"
+&"Wily's Defeat Scene 2"
+&"-"
+&"-"
+&"-"
+&"-"
+&"-"
+&"Init CHR Animation ID 2"
+&"Init CHR Animation ID 3"
+&"Disable CHR An/Set CHR Proto 2"
+&"Disable CHR An/Set CHR Wily1"
+&"BG Pal Update - Wily2"
+&"BG Pal Update 3 - Wily2"
+&"BG Pal Update - Stoneman"
+&"BG Pal Update 3 - Stoneman"
+&"Init Pal Animation ID 9"
+&"Init Pal Animation ID 10"
+&"BG Pal Update 2 - Wily2"
+&"Init Pal Animation ID 3"
+&"CHR 4/Copy of CHR Animation 3"
+&"Disable CHR An/Set Wily2 CHR"
+&"BG Pal Update - Waveman"
+&"CF"
+&"Init CHR Animation ID 0"
+&"Init CHR Animation ID 1"
+&"BG Pal Update 3 - Napalmman"
+&"Init CHR Animation ID 5"
+&"Disable CHR An/Set CHR Star"
+&"BG Pal Update - Napalmman"
+&"BG Pal Update 2 - Stoneman"
+&"D7"
+&"D8"
+&"D9"
+&"DA"
+&"DB"
+&"DC"
+&"DD"
+&"DE"
+&"BG Pal Update 2 - Napalmman"
+&"BG Pal Update 5 - Napalmman"
+&"BG Pal Update 4 - Napalmman"
+&"Init Pal Animation ID 1D"
+&"E3"
+&"E4"
+&"E5"
+&"E6"
+&"E7"
+&"E8"
+&"E9"
+&"Bg Pal Update 2 - Waveman"
+&"Init Pal Animation ID 11"
+&"EC"
+&"ED"
+&"EE"
+&"Disable CHR An/Set CHR Stone"
+}
+
+{enemy_names6
+&"0"
+&"1"
+&"2"
+&"3"
+&"4"
+&"5"
+&"6"
+&"7"
+&"8"
+&"9"
+&"a"
+&"b"
+&"c"
+&"d"
+&"e"
+&"f"
+&"10"
+&"11"
+&"Shield Attacker"
+&"Ceiling Dropper"
+&"14"
+&"15"
+&"16"
+&"17"
+&"Jumping Metool"
+&"Time Bomb - Up"
+&"1a"
+&"Ball Shooter"
+&"1c"
+&"E Tank"
+&"1e"
+&"1f"
+&"Sniper Cannon"
+&"Time Bomb - Left"
+&"22"
+&"23"
+&"24"
+&"25"
+&"26"
+&"27"
+&"28"
+&"29"
+&"Flamethrower"
+&"2b"
+&"Flame Dropper"
+&"2d"
+&"2e"
+&"2f"
+&"30"
+&"31"
+&"32"
+&"33"
+&"Step Platform"
+&"35"
+&"Fan (Windman)"
+&"Extra Life"
+&"Small Energy Capsule"
+&"Large Energy Capsule"
+&"3a"
+&"3b"
+&"3c"
+&"Magic Jar"
+&"3e"
+&"3f"
+&"40"
+&"41"
+&"42"
+&"43"
+&"44"
+&"45"
+&"46"
+&"47"
+&"48"
+&"Small Weapon Capsule"
+&"Large Weapon Capsule"
+&"4b"
+&"4c"
+&"Snow Walrus"
+&"4e"
+&"Metool Generator Miniboss"
+&"50"
+&"51"
+&"52"
+&"53"
+&"54"
+&"55"
+&"56"
+&"57"
+&"58"
+&"59"
+&"5a"
+&"5b"
+&"5c"
+&"5d"
+&"5e"
+&"5f"
+&"Grasshopper"
+&"61"
+&"62"
+&"63"
+&"64"
+&"65"
+&"66"
+&"Skullhead"
+&"68"
+&"Explosive Dragonfly"
+&"6a"
+&"6b"
+&"6c"
+&"6d"
+&"Drilling Machine"
+&"Balance Platform"
+&"Eddie"
+&"71"
+&"72"
+&"73"
+&"74"
+&"75"
+&"76"
+&"77"
+&"78"
+&"79"
+&"7a"
+&"7b"
+&"7c"
+&"7d"
+&"7e"
+&"7f"
+&"80"
+&"81"
+&"82"
+&"83"
+&"84"
+&"85"
+&"86"
+&"87"
+&"88"
+&"89"
+&"Protoman (Energy Balancer Item)"
+&"8b"
+&"8c"
+&"8D"
+&"8E"
+&"Disappearing Block"
+&"90"
+&"91"
+&"92"
+&"93"
+&"94"
+&"95"
+&"96"
+&"97"
+&"98"
+&"99"
+&"9A"
+&"9B"
+&"9C"
+&"9D"
+&"9E"
+&"9F"
+&"A0"
+&"A1"
+&"A2"
+&"A3"
+&"A4"
+&"A5"
+&"A6"
+&"A7"
+&"A8"
+&"A9"
+&"AA"
+&"AB"
+&"AC"
+&"AD"
+&"AE"
+&"AF"
+&"B0"
+&"B1"
+&"B2"
+&"B3"
+&"B4"
+&"B5"
+&"B6"
+&"B7"
+&"B8"
+&"B9"
+&"BA"
+&"BB"
+&"BC"
+&"BD"
+&"BE"
+&"BF"
+&"C0"
+&"C1"
+&"C2"
+&"C3"
+&"C4"
+&"C5"
+&"C6"
+&"C7"
+&"C8"
+&"C9"
+&"CA"
+&"CB"
+&"CC"
+&"CD"
+&"CE"
+&"CF"
+&"D0"
+&"D1"
+&"D2"
+&"D3"
+&"D4"
+&"Rematch Room Warp"
+
+}
+
+{dirtypedat34
+&""
+&""
+&"Right"
+&"Boss Doors (MM4)"
+&"Down"
+&""
+&"DownRight"
+&""
+&"Up"
+&""
+&"UpRight"
+&""
+&""
+&""
+&""
+&""
+}
+
+{dirtypedat5
+&""
+&"Right"
+&"Down"
+&"DownRight"
+&"Up"
+&"UpRight"
+&""
+&""
+}
+
+{eff_enem4
+&!FF
+&!18,!19,!1A,!FF
+&!FF
+&!7F,!FF
+&!1,!67,!FF
+&!1E,!1F,!20,!86,!FF
+&!4,!36,!FF
+&!28,!82,!FF
+&!31,!32,!FF
+&!11,!47,!FF
+&!FF
+&!FF
+&!4D,!78,!FF
+&!3,!13,!FF
+&!6B,!5C,!FF
+&!0,!67,!FF
+&!6B,!30,!FF /10/
+&!12,!FF
+&!4C,!3D,!41,!FF
+&!10,!15,!28,!82,!80,!FF
+&!8,!9,!A,!B,!49,!FF
+&!6B,!FF
+&!FF
+&!38,!37,!39,!3A,!83,!FF
+&!4A,!45,!FF
+&!3D,!41,!FF
+&!81,!84,!2D,!FF
+&!3B,!3C,!42,!FF
+&!FF
+&!2E,!2F,!54,!4B,!FF
+&!29,!2A,!2B,!34,!51,!52,!82,!28,!FF
+&!48,!54,!FF
+&!FF			/20/
+&!33,!4F,!0,!FF
+&!FF
+&!48,!73,!FF
+&!6B,!FF
+&!57,!58,!59,!FF
+&!5E,!5F,!60,!FF
+&!79,!FF
+&!79,!FF
+&!79,!FF
+&!79,!FF
+&!79,!FF
+&!79,!FF
+&!79,!FF
+&!79,!FF
+&!77,!5D,78,!FF
+&!3C,!42,!FF	/30/
+&!68,!46,!4B,!FF
+&!61,!62,!63,!64,!65,!66,!FF
+&!2,!28,!82,!54,!FF
+&!81,!84,!54,!FF
+&!54,!75,!76,!78,!FF
+&!29,!2A,!2B,!34,!5C,!28,!82,!FF
+&!29,!2A,!2B,!81,!84,!28,!82,!FF
+&!6A,!49,!FF
+&!1C,!69,!FF
+&!11,!28,!82,!FF
+&!29,!2A,!2B,!72,!28,!82,!FF
+&!4C,!73,!FF
+&!1,!5C,!FF
+&!3B,!3C,!0,!FF
+&!45,!5D,!FF
+&!6F,!70,!1B,!71,!FF	/40/
+&!50,!53,!55,!FF
+&!6C,!6D,!3B,!3C,!FF
+&!FF
+&!8,!9,!A,!B,!C,!D,!E,!F,!6,!7,!FF
+&!4E,!54,!FF
+&!3C,!42,!4A,!FF
+&!35,!78,!FF
+&!15,!5C,!80,!FF
+&!7D,!7E,!FF
+&!FF
+&!6E,!FF
+&!51,!52,!72,!33,!FF
+&!6B,!FF
+&!68,!78,!FF
+&!FF
+}
+
+{sound3
+&"Title"
+&"Needleman"
+&"Magnetman"
+&"Geminiman"
+&"Hardman"
+&"Topman"
+&"Snakeman"
+&"Sparkman"
+&"Shadowman"
+&"Wily Stage 1 & 2"
+&"Wily Stage 3 & 4"
+&"Wily Stage 5 & 6"
+&"Boss Battle"
+&"Wily Battle"
+&"Password"
+&"Credits"
+&"Stage Select"
+&"Protoman's Theme"
+&"Ending Theme"
+&"Land"
+&"Extra Life"
+&"Shot"
+&"Hit"
+&"Die"
+&"Hit enemy"
+&"Weapon Reflect"
+&"Menu"
+&"Select"
+&"Energy Bar Fill"
+&"Boss Door"
+&"SFX31"
+&"SFX32"
+&"SFX33"
+&"SFX34"
+&"SFX35"
+&"Appearing blocks"
+&"SFX37"
+&"SFX38"
+&"SFX39"
+&"SFX40"
+&"Wily Saucer"
+&"SFX42"
+&"SFX43"
+&"SFX44"
+&"Top Spin"
+&"Spark Shot"
+&"Gem/Sha"
+&"SFX48"
+&"SFX49"
+&"SFX50"
+&"Weapon Absorb"
+&"Boss Selected"
+&"Megaman Warp"
+&"Weapon Get"
+&"Wily's Castle Intro"
+&"Wily Defeated"
+&"Boss Defeated"
+}
+
+{sound3type
+!#!#!#!#!#!#!#!#
+!#!#!#!#!#!#!#!#
+!#!#!#!.!.!.!.!.
+!.!.!.!.!.!.!.!.
+!.!.!.!.!.!.!.!.
+!.!.!.!.!.!.!.!.
+!.!.!.!#!.!#!#!#
+!#
+}
+
+{sound4
+&"Brightman"
+&"Toadman"
+&"Ringman"
+&"Drillman"
+&"Pharaohman"
+&"Diveman"
+&"Skullman"
+&"Dustman"
+&"Cossack Stage 1 & 2"
+&"Wily Stage 1 & 2"
+&"Prologue"
+&"Ending"
+&"Stage Clear"
+&"Password"
+&"Game Over"
+&"Boss Intro"
+&"Stage Select"
+&"Boss Battle"
+&"Title"
+&"Credits"
+&"Weapon Get"
+&"Cossack Stage 3 & 4"
+&"Wily Stage 3 & 4"
+&"Flash Stopper"
+&"Rain Flush"
+&"Ring Boomerang"
+&"Drill Bomb"
+&"Pharaoh Shot (Load)"
+&"Lightning (Cossack Stage Intro)"
+&"Path (Cossack/Wily Stage Intro)"
+&"Charged Shot"
+&"Extra Life"
+&"SFX33"
+&"Normal Shot"
+&"Charge Up"
+&"Land"
+&"Got Hit"
+&"Die"
+&"Hit Enemy"
+&"Mega Buster Loaded"
+&"Explosion"
+&"Energy Bar Fill"
+&"Selected"
+&"Reflect Shot"
+&"Boss Wall"
+&"Password Error"
+&"Selection"
+&"Password OK"
+&"Menu Open"
+&"Grasshopper"
+&"Wire"
+&"Megaman Warp"
+&"SFX53"
+&"SFX54"
+&"Wily Lab Explosion Danger"
+&"Wily Lab Explosion"
+&"SFX57"
+&"Blocks Appears"
+&"Got Special Item"
+&"Wily Stage Intro"
+&"Cossack Stage Intro"
+&"Half-Loaded Buster Release"
+&"Full Pharaoh Shot Release"
+&"Protoman's Theme"
+&"Wily Saucer"
+&"Megaman Exit Warp"
+&"SFX67"
+&"Prologue 2"
+&"-"
+&"Final Wily Battle"
+&"Wily Defeated"
+}
+
+{sound4type
+!#!#!#!#!#!#!#!#
+!#!#!#!#!#!#!#!#
+!#!#!#!#!#!#!#!.
+!.!.!.!.!.!.!.!.
+!.!.!.!.!.!.!.!.
+!.!.!.!.!.!.!.!.
+!.!.!.!.!.!.!.!.
+!.!.!#!#!#!.!.!#
+!.!.!.!#!.!#!#
+}
+
+{sound5
+&"Gravityman"
+&"Stoneman"
+&"Waveman"
+&"Starman"
+&"Crystalman"
+&"Gyroman"
+&"Chargeman"
+&"Napalmman"
+&"Protoman Stages"
+&"Wily Stages"
+&"Boss Battle"
+&"Intro"
+&"Credits"
+&"Stage Select"
+&"Stage Intro"
+&"Protoman Stage Intro"
+&"Wily Stage Intro"
+&"Stage Clear"
+&"Game Over"
+&"Password"
+&"Get Weapon"
+&"Wily Defeated"
+&"Final Wily Battle"
+}
+
+{sound5type
+!#!#!#!#!#!#!#!#
+!#!#!#!#!#!#!#!#
+!#!#!#!#!#!#!#!#
+!#!#!#!#!#!#!#!#
+}
+
+{sound6
+&"Windman"
+&"Blizzardman"
+&"Tomahawkman"
+&"Flameman"
+&"Plantman"
+&"Centaurman"
+&"Yamatoman"
+&"Knightman"
+&"-"
+&"Mr.X Stages"
+&"-"
+&"Wily Stages"
+}
+
+{sound6type
+!#!#!#!#!#!#!#!#
+!#!#!#!#!#!#!#!#
+!#!#!#!#!#!#!#!#
+!#!#!#!#!#!#!#!#
+}
+
+{sbdbanknames3
+&"Needleman"
+&"Magnetman"
+&"Geminiman"
+&"Hardman"
+&"Topman"
+&"Snakeman"
+&"Sparkman"
+&"Shadowman"
+&"Needleman (Doc Robot)"
+&"Geminiman (Doc Robot)"
+&"Sparkman (Doc Robot)"
+&"Shadowman (Doc Robot)"
+&"Wily Stage 1"
+&"Wily Stage 2, 3, & 5"
+&"Screen Bank 1"
+&"Wily Stage 4"
+&"Screen Bank 2"
+&"Wily Stage 6"
+&"?"
+&"Screen Bank 4"
+}
+
+{sbdbanknames4
+&"-"
+}
+
+{sbdbanknames5
+&"Gravityman"
+&"Waveman"
+&"Stoneman"
+&"Gyroman"
+&"Starman"
+&"Chargeman"
+&"Napalmman"
+&"Crystalman"
+&"Protoman 1 & 4"
+&"Protoman 2"
+&"Protoman 3"
+&"-"
+&"Wily 1"
+&"Wily 2"
+&"Wily 3 & 4"
+&"-"
+}
+
+{levnames3
+&"Needleman"
+&"Magnetman"
+&"Geminiman"
+&"Hardman"
+&"Topman"
+&"Snakeman"
+&"Sparkman"
+&"Shadowman"
+&"Needleman (Doc Robot)"
+&"Geminiman (Doc Robot)"
+&"Sparkman (Doc Robot)"
+&"Shadowman (Doc Robot)"
+&"Wily 1"
+&"Wily 2"
+&"Wily 3"
+&"Wily 4"
+&"Wily 5"
+&"Wily 6"
+&"[Scenes] 1"
+&"[Scenes] 2"
+&"[Scenes] 3"
+&"[Scenes] 4"
+}
+
+{levnames4
+&"Brightman"
+&"Toadman"
+&"Drillman"
+&"Pharaohman"
+&"Ringman"
+&"Dustman"
+&"Diveman"
+&"Skullman"
+&"Cossack 1"
+&"Cossack 2"
+&"Cossack 3"
+&"Cossack 4"
+&"Wily 1"
+&"Wily 2"
+&"Wily 3"
+&"Wily 4"
+&"[Scenes] 1"
+&"[Scenes] 2"
+&"[Scenes] 3"
+&"[Scenes] 4"
+&"[Scenes] 5"
+}
+
+{levnames5
+&"Gravityman"
+&"Waveman"
+&"Stoneman"
+&"Gyroman"
+&"Starman"
+&"Chargeman"
+&"Napalmman"
+&"Crystalman"
+&"Protoman 1"
+&"Protoman 2"
+&"Protoman 3"
+&"Protoman 4"
+&"Wily 1"
+&"Wily 2"
+&"Wily 3"
+&"Wily 4"
+}
+
+{levnames6
+&"Blizzardman"
+&"Windman"
+&"Plantman"
+&"Flameman"
+&"Yamatoman"
+&"Tomahawkman"
+&"Knightman"
+&"Centaurman"
+&"Mr.X 1"
+&"Mr.X 2"
+&"Mr.X 3"
+&"Mr.X 4"
+&"Wily 1"
+&"Wily 2"
+&"Wily 3"
+&"Wily 4"
+}
+
+{efflab
+!#!#!.!.!#!.!.!#!.!.
+!#!.!.!#!.!.!#!.!.!#
+!#!#!.!#!#!.!#!#!.!.
+!#!.!.!#!.!.!#!.!.!#
+!#!#!.!#!.!.!#!.!.!.
+}
+
+{minihex
+&
+!#!#!#
+!#!.!#
+!#!.!#
+!#!.!#
+!#!#!#
+&
+!.!.!#
+!.!.!#
+!.!.!#
+!.!.!#
+!.!.!#
+&
+!#!#!#
+!.!.!#
+!#!#!#
+!#!.!.
+!#!#!#
+&
+!#!#!#
+!.!.!#
+!.!#!#
+!.!.!#
+!#!#!#
+&
+!#!.!#
+!#!.!#
+!#!#!#
+!.!.!#
+!.!.!#
+&
+!#!#!#
+!#!.!.
+!#!#!#
+!.!.!#
+!#!#!#
+&
+!#!.!.
+!#!.!.
+!#!#!#
+!#!.!#
+!#!#!#
+&
+!#!#!#
+!.!.!#
+!.!.!#
+!.!.!#
+!.!.!#
+&
+!#!#!#
+!#!.!#
+!#!#!#
+!#!.!#
+!#!#!#
+&
+!#!#!#
+!#!.!#
+!#!#!#
+!.!.!#
+!.!.!#
+&
+!.!#!.
+!#!.!#
+!#!#!#
+!#!.!#
+!#!.!#
+&
+!#!#!.
+!#!.!#
+!#!#!.
+!#!.!#
+!#!#!.
+&
+!.!#!#
+!#!.!.
+!#!.!.
+!#!.!.
+!.!#!#
+&
+!#!#!.
+!#!.!#
+!#!.!#
+!#!.!#
+!#!#!.
+&
+!#!#!#
+!#!.!.
+!#!#!#
+!#!.!.
+!#!#!#
+&
+!#!#!#
+!#!.!.
+!#!#!#
+!#!.!.
+!#!.!.
+}
+
+{identsignature
+/signatures in ROM to autodetect game mode, using game's interrupt vector adresses.
+ format: [offset], [# of bytes], [byte0], ([byte1]), ../
+& !8000E, !2, !43,!C1  /Megaman 3/
+& !8000E, !2, !49,!C1  /Megaman 4/
+& !4000E, !2, !69,!C1  /Megaman 5/
+& !8000E, !2, !4C,!C1  /Megaman 6/
+}
+
+{systempal
+!A0A0A0 /Enemy Editor: Global Grey grid color/
+!FFFFFF /Enemy Editor: Global White grid color/
+!FF6060 /Enemy Editor: Red Frame/
+!6060FF /Enemy Editor: Blue Frame/
+!60FF60 /Enemy Editor: Green Frame/
+!00FFFF /Enemy Editor: Cyan Frame/
+!FF60FF /Enemy Editor: Pink Frame/
+}
+
+{offstypenames
+&"Max LevelID"
+&"Start - Lvl Banks"
+&"Start - CHR Banks"
+&"TSA Block Tiledata"
+&"TSA Block Typedata"
+&"Structure Data"
+&"Screen Preset Data"
+&"Screen Layout"
+&"Direction Type"
+&"Direction Data A"
+&"Direction Data B"
+&"Sprite: Screen"
+&"Sprite: X"
+&"Sprite: Y"
+&"Sprite: Type"
+&"Palettes"
+&"Max Screens"
+&"Max Scren Presets"
+&"Max Palette Presets"
+&"Max Sprites"
+&"Max Scene Levels"
+&"Multi-Path Data"
+&"Level: Music Track ID"
+&"Max Multi-Paths"
+&"Screen: First Sprite"
+&"CHR Bank Pointers"
+&"Level: SBD Bank"
+&"Sprite Palettes"
+}
+
+{texttable3
+/1st text format starts here for megaman 3/
+&" ", &"0", &"1", &"2", &"3", &"4", &"5", &"6", &"7", &"8", &"9", &"A", &"B", &"C", &"D", &"E", /15d (0Fh)/
+&"F", &"G", &"H", &"I", &"J", &"K", &"L", &"M", &"N", &"O", &"P", &"Q", &"R", &"S", &"T", &"U", /31d (1Fh)/
+&"V", &"W", &"X", &"Y", &"Z", &"r", &".", &"'", &"!", &"?", &":", &",", &"-", &" ", &" ", &" ", /47d (2Fh)/
+/2nd text format starts here for megaman 3/
+&"0", &"1", &"2", &"3", &"4", &"5", &"6", &"7", &"8", &"9", &"A", &"B",
+&"C", &"D", &"E", &"F", /15d (0Fh)/
+&"G", &"H", &"I", &"J", &"K", &"L", &"M", &"N", &"O", &"P", &"Q", &"R" &"S", &"T", &"U", &"V", /31d (1Fh)/
+&"W", &"X", &"Y", &"Z", &" ", &" ", &".", &",", &"'", &"!", &"r.", &":", &" ", &" ", &" ", &" ", /47d (2Fh)/
+&" ", &" ", &" ", &" ", &"E", &" ", &" ", &" ", &" ", &" ", &" ", &" ",
+&"©", &" ", &" ", &" "  /63d (3Fh)/
+}
+
+{texttable4
+/1st format starts here for megaman 4/
+&" ", &"1", &"2", &"3", &"4", &"5", &"6", &"7", &"8", &"9", &"A", &"B",
+&"C", &"D", &"E", &"F", /15d (0Fh)/
+&"G", &"H", &"I", &"J", &"K", &"L", &"M", &"N", &"O", &"P", &"Q", &"R" &"S", &"T", &"U", &"V", /31d (1Fh)/
+&"W", &"X", &"Y", &"Z", &".", &"-", &"=", &"?", &"!", &"©", &"<", &">", &"'", &"/", &",", &" ", /47d (2Fh)/
+/2nd format starts here for megaman 4/
+&"A", &"B", &"C", &"D", &"E", &"F", &"G", &"H", &"I", &"J", &"K", &"L",
+&"M", &"N", &"O", &"P", /143d (8Fh)/
+&"Q", &"R", &"S", &"T", &"U", &"V", &"W", &"X", &"Y", &"Z", &" ", &" ",
+&" ", &" ", &" ", &" ", /159d (9Fh)/
+&" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ",
+&" ", &" ", &" ", &" ", /175d (AFh)/
+&" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", /191d (BFh)/
+&" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", /207d (CFh)/
+&" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", /223d (DFh)/
+&" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", /239d (EFh)/
+&"1", &"2", &"3", &"4", &"5", &"6", &"7", &"8", &"9", &".", &" ", &" ", &" ", &" ", &" ", &" ", /255d (FFh)/
+}
+
+{texttable5
+&" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ",
+&" ", &" ", &" ", &" ",  /15d (0Fh)/
+&" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ",  /31d (1Fh)/
+&" ", &"!", &"!", &" ", &" ", &" ", &" ", &"'", &" ", &" ", &" ", &" ", &",", &"-", &".", &"/",  /47d (2Fh)/
+&"0", &"1", &"2", &"3", &"4", &"5", &"6", &"7", &"8", &"9", &" ", &" ",
+&" ", &"=", &" ", &"?"   /63d (3Fh)/
+&" ", &"A", &"B", &"C", &"D", &"E", &"F", &"G", &"H", &"I", &"J", &"K",
+&"L", &"M", &"N", &"O",  /79d (4Fh)/
+&"P", &"Q", &"R", &"S", &"T", &"U", &"V", &"W", &"X", &"Y", &"Z", &" ", &" ", &" ", &" ", &" ",  /95d (5Fh)/
+&" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ",  /111d (6Fh)/
+&" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ",  /127d (7Fh)/
+&" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ",  /143d (8Fh)/
+&" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ",  /159d (9Fh)/
+&" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ",  /175d (AFh)/
+&" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ",  /191d (BFh)/
+&" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ",  /207d (CFh)/
+&" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ",  /223d (DFh)/
+&" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ",  /239d (EFh)/
+&" ", &" ", &" ", &" ", &" ", &"©", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ", &" ",  /255d (FFh)/
+}
+
+{texttable6
+}
+
+{textstrings3
+/Format: [offset], [cycles], [# of pages for selection], [subtractor]
+The first 10 or so entries is to offset the page number modifier correctly/
+!11, !19, !23, !35, !39, !83, !87, !119, !123, !139, !163
+
+!1C215 !1 !2 !2, !1C24E !1 !2 !2  /11/
+
+!1C26C !1 !1 !2  /19/
+
+!1C297 !1 !3 !2, !1C2EE !1 !3 !2, !1C313 !1 !3 !2  /23/
+
+!1A3BB !1 !1 !3  /35/
+
+!1A3C7 !1 !B !3, !1A3F8 !1 !B !3, !1A429 !1 !B !3, !1A456 !1 !B !3,     !1A486 !1 !B !3, !1A4BD !1 !B !3, !1A4F2 !1 !B !3, !1A51F !1 !B !3,     !1A545 !1 !B !3, !1A57A !1 !B !3, !1A5B3 !1 !B !3 /39/
+
+!188D3 !1 !1 !3 /83/
+
+!1C0D3 !1 !8 !2, !1C0FE !1 !8 !2, !1C123 !1 !8 !2, !1C14E !1 !8 !2,     !1C174 !1 !8 !2, !1C19A !1 !8 !2, !1C1C3 !1 !8 !2, !1C1EB !1 !8 !2 /87/
+
+!6502  !2 !1 !3 /119/
+
+!6310  !1 !4 !3, !6338  !1 !4 !3, !634D  !1 !4 !3, !64E0  !1 !4 !3 /123/
+
+!637D  !1 !6 !3, !63A7  !1 !6 !3, !63C3  !1 !6 !3, !63E7  !1 !6 !3,      !640B  !1 !6 !3, !64CD  !1 !6 !3 /139/
+
+!641E  !2 !4 !3, !644C  !4 !4 !3, !648A  !3 !4 !3, !64BE  !1 !4 !3 /163/
+}
+
+{textstrings4
+/Format: [offset], [cycles], [# of pages for selection], [Subtactor]
+The first 10 or so entries is to offset the page number modifier correctly/
+!9, !65, !81, !109, !145, !149, !181, !189, !201
+
+!37435 !1 !E !3, !377D6 !1 !E !399, !3781C !1 !E !3DF, !3784C !1 !E !40F, !3788C !1 !E !44F, !378B9 !1 !E !47C, !378F2 !1 !E !4B5, !37937 !1 !E !4FA, !37974 !1 !E !537, !379AB !1 !E !56E, !379DE !1 !E !5A1, !37A24 !1 !E !5E7,  !37A69 !1 !E !62C, !37AAA !1 !E !66D /9/
+
+!794E1 !1 !4 !?, !7952E !1 !4 !?, !79581 !1 !4 !?, !795C6 !1 !4 !? /65/
+
+!36AFE !1 !7 !2, !36B28 !1 !7 !2, !36B4F !1 !7 !2, !36B75 !1 !7 !2 
+!36B9B !1 !7 !2, !36BC7 !1 !7 !2, !36BED !1 !7 !2  /81/
+
+!3756F !4 !9 !?, !375B7 !4 !9 !?, !375FB !4 !9 !?, !37649 !4 !9 !? 
+!3768F !4 !9 !?, !376D7 !4 !9 !?, !37718 !4 !9 !?, !37757 !4 !9 !?
+!37798 !2 !9 !? /109/
+
+!36E27 !1 !1 !3 /145/
+
+!36CAE !1 !8 !3, !36CDA !1 !8 !3, !36D02 !1 !8 !3, !36D2A !1 !8 !3 
+!36D54 !1 !8 !3, !36D7A !1 !8 !3, !36DA1 !1 !8 !3, !36DC9 !1 !8 !3 /149/
+
+!73554 !2 !2 !3, !73589 !2 !2 !3 /181/
+
+!733E7 !4 !3 !2, !7341B !4 !3 !2, !73459 !3 !3 !2 /189/
+
+!73482 !4 !2 !2, !734B4 !4 !2 !2  /201/
+}
+
+{textstrings5
+/Format: [offset], [cycles], [# of pages for selection], [subtractor]
+The first 10 or so entries is to offset the page number modifier correctly/
+!8, !24, !28, !92, !156, !160, !172, !184
+
+!2FB90 !1 !4 !?, !2FBE7 !1 !4 !?, !2FC4C !1 !4 !?, !2FC5E !1 !4 !? /8/
+
+!1C57D !1 !1 !3   /24/
+
+!1E062 !1 !10 !2, !1E089 !1 !10 !2, !1E099 !1 !10 !2, !1E0BD !1 !10 !2, !1E0D0 !1 !10 !2, !1E0F5 !1 !10 !2, !1E107 !1 !10 !2, !1E12B !1 !10 !2, !1E13F !1 !10 !2, !1E163 !1 !10 !2, !1E177 !1 !10 !2, !1E19D !1 !10 !2, !1E1B2 !1 !10 !2, !1E1D8 !1 !10 !2, !1E1ED !1 !10 !2, !1E214 !1 !10 !2 /28/
+
+!1E227 !1 !10 !2, !1E250 !1 !10 !2, !1E27B !1 !10 !2, !1E2A4 !1 !10 !2, !1E2CC !1 !10 !2, !1E2F1 !1 !10 !2, !1E31B !1 !10 !2, !1E346 !1 !10 !2, !1E36C !1 !10 !2, !1E390 !1 !10 !2, !1E3BB !1 !10 !2, !1E3E3 !1 !10 !2, !1E409 !1 !10 !2, !1E430 !1 !10 !2, !1E458 !1 !10 !2, !1E482 !1 !10 !2,
+/92/
+
+!2F226 !1 !1 !3 /156/
+
+!185B6 !1 !3 !3, !185D0 !1 !3 !3, !18612 !1 !3 !3 /160/
+
+!2F09E !1 !3 !3, !2F0B1 !2 !3 !3, !2F0E5 !1 !3 !3 /172/
+
+!2EF17 !3 !4 !-D4, !2EF59 !3 !4 !2, !2EF80 !3 !4 !2, !2EFA9 !3 !4 !-42 /184/
+}
+
+{textstrings6
+}
+
+{textselect
+!A  /set megaman 3 textnames/
+!8  /set megaman 4 textnames/
+!7  /set megaman 5 textnames/
+!0  /set megaman 6 textnames/
+}
+
+{textname3
+&"Dr Lights Lab"  /format 1, textable 1 [FE, FF]/
+&"Gamma Battle"   /format 1, textable 1 [FE, FF]/
+&"Dr Lights Lab2" /format 1, textable 1 [FE, FF]/
+&"Epilogue End"   /format 1, textable 1 [byte 3, FF]/
+&"MM1 Robots End" /format 2, textable 1 [byte 3, FF]/
+&"Staff End"      /format 2, textable 2 [byte 3, FF]/
+&"MM3 Robots End" /format 1, textable 2 [FE, FF]/
+&"Title Intro"    /format 2, textable 2 [byte 3, FF]/
+&"Password"       /format 2, textable 2 [byte 3, FF]/
+&"Stage Select"   /format 2, textable 2 [byte 3, FF]/
+&"Got Weapon"     /format 2, textable 2 [byte 3, FF]/
+}
+
+{textname4
+&"City Intro" 	  /format 1, textable 1 [unknown]/
+&"Cossack Scene"  /format 1, textable 1 [unknown]/
+&"Train End"	  /format 1, textable 1 [unknown, 7F, B0]/
+&"Ending 2"	  /format 1, textable 1 [unknown, FF]/
+&"Staff End"	  /format 2, textable 2 [byte 3, FF]/
+&"MM4 Robots End" /format 2, textable 2 [byte 3, FF]/
+&"Password"	  /format 2, textable 2 [byte 3, FF]/
+&"Got Weapon"     /format 2, textable 2 [unknown, FF]/
+&"Boss Selected"  /format 2, textable 2 [unknown, FF]/
+}
+
+{textname5
+&"Dr Wily Returns" /format 1, textable 1 [FE, FF]/
+&"Staff End"	   /format 1, textable 1 [byte 3, FF]/
+&"MM5 Robots End"  /format 1, textable 1 [00, FF]/
+&"Ending Credits"  /format 1, textable 1 [00, FF]/
+&"Title Intro"	   /format 2, textable 1 [byte 3, no end byte, FF]/
+&"Proto Intro"	   /format 2, textable 1 [byte 3, no end byte, FF]/
+&"Password"	   /format 2, textable 1 [byte 3, FF]/	
+&"Got Weapon"      /format 2, textable 1 [2E, 5C]/
+}
+
+{textname6
+}
+
+{enemdmgoffs3
+!2  !2 !3 !3 !4 !10 !4  !FF !5 !5  !8 !FF !B !B !10 !B                 
+!FF !E !E !E !4 !1  !FF !FF !D !FF !E !F  !F !F !F  !F                  
+!10 !11 !11 !10 !11 !FF !11 !FF !FF !FF !FF !FF !11 !FF !FF !FF      
+!FF !FF !FF !C2 !FF !FF !-2F !-3 !11 !11 !11 !11 !11 !FF !14 !FF     
+!FF !FF !FF !FF !FF !FF !FF !79 !79 !8D !86 !77 !88 !85 !75 !FF      
+!FF !FF !FF !FF !FF !FF !FF !A5 !FF !FF !FF !FF !17 !FF !92 !FF      
+!-12 !-13 !-1B !-1 !14 !14 !FF !FF !38 !47 !48 !36 !36 !46 !35 !42   
+!FF !18 !FF !17 !FF !FF !FF !FF !FF !FF !6E !FF !FF !FF !FF !FF      
+!FF !5F !61 !62 !69 !FF !FF !FF !FF !FF !FF 
+}
+
+{enemdmgoffs4
+!10 !FF !11 !11 !FF !13 !14 !13 !FF !FF !FF !FF !FF !FF !FF !FF
+!C  !E  !1E !20 !21 !22 !FF !FF !C  !FF !FF !91 !FF !FF !D  !AE
+!FF !FF !FF !FF !FF !FF !FF !FF !FF !-1 !-1 !-1 !FF !10 !10 !F
+!68 !FF !FF !13 !14 !FF !18 !FF !1A !FF !FF !15 !1A !FF !FF !FF
+!FF !FF !1A !FF !FF !1A !23 !1A !1A !1B !1B !1E !21 !23 !6B !FF
+!FF !27 !26 !FF !6A !FF !FF !FF !30 !30 !FF !FF !32 !34 !34 !FF
+!FF !34 !FF !33 !32 !31 !30 !33 !34 !35 !FF !36 !3A !-6 !39 !3C
+!FF !FF !3E !3F !FF !40 !3F !3F !3F !FF !FF !FF !FF !FF !FF !45
+!FF !49 !FF !FF !43 !FF !FF !48
+}
+
+{enemdmgoffs5
+!10 !11 !11 !12 !12 !12 !12 !12 !13 !14 !1C !14 !14 !14 !15 !14
+!15 !28 !16 !14 !17 !1C !1D !1E !12 !1D !1C !3E !47 !47 !7E !7D
+!FF !FF !FF !FF !FF !FF !FF !FF !D  !75 !10 !10 !12 !10 !F  !E
+!D  !1F !21 !21 !22 !88 !30 !23 !24 !24 !25 !25 !-0 !-1 !-2 !27
+!FF !FF !FF !FF !FF !FF !FF !FF !FF !FF !FF !FF !-C !FF !FF !-C
+!-C !FF !FF !FF !FF !FF !FF !FF !FF !-A !17 !FF !20 !43 !3A !46
+!7  !7  !7  !8  !A  !1C !1D !1F !21 !24 !27 !28 !2A !FF !FF !FF
+}
+
+{weaponname3
+&"Mega Buster"
+&"Needle Cannon"
+&"Magnet Missle"
+&"Gemini Lazer"
+&"Hard Knuckle"
+&"Top Spin"
+&"Search Snake"
+&"Spark Shock"
+&"Shadow Blade"
+&"Rush Coil"
+&"Rush Marine"
+&"Rush Jet"
+}
+
+{weaponname4
+&"Mega Buster"
+&"Rush Coil"
+&"Rush Jet"
+&"Rush Marine"
+&"Rain Flush"
+&"Wire"
+&"Unused/Balloon"
+&"Dive Missle"
+&"Ring Boomerang"
+&"Drill Bomb"
+&"Dust Crusher"
+&"Pharoah Shot"
+&"Flash Stopper"
+&"Skull Barrier"
+}
+
+{weaponname5
+&"Mega Buster"
+&"Water Wave"
+&"Gyro Attack"
+&"Crystal Eye"
+&"Napalm Bomb"
+&"Super Arrow"
+&"Power Stone"
+&"Gravity Hold"
+&"Charge Kick"
+&"Star Crash"
+&"Rush Coil"
+&"Rush Jet"
+&"Beat"
+}
+
+/Pointer Layout (do not edit!)/
+
+%0=data3
+%1=data4
+%2=data5
+%3=data6
+%4=offstype
+%5=blocktypes3
+%6=blocktypes4
+%7=blocktypes5
+%8=blocktypes6
+%9=blocktypes3&index
+%10=blocktypes4&index
+%11=blocktypes5&index
+%12=blocktypes6&index
+%13=datax
+%15=enemy_chrbank0
+%16=enemy_chrbank1
+%17=enemy_chrbank1x
+%18=enemy_names3
+%19=enemy_names4
+%20=enemy_names5
+&21=enemy_names6
+%22=enemy_names3&index
+%23=enemy_names4&index
+%24=enemy_names5&index
+%25=enemy_names6&index
+%26=dirtypedat34&index
+%27=dirtypedat5&index
+%28=sound3
+%29=sound4
+%30=sound5
+%31=sound6
+%32=sound3&index
+%33=sound4&index
+%34=sound5&index
+%35=sound6&index
+%36=sound3type
+%37=sound4type
+%38=sound5type
+%39=sound6type
+%40=efflab
+%41=minihex
+%42=eff_enem4&index
+%43=greenframe4
+%44=greenframe5
+%45=gamedata5&index
+%48=sbdbanknames3&index
+%49=sbdbanknames4&index
+%50=sbdbanknames5&index
+%51=identsignature&index
+%52=systempal
+%53=levnames3&index
+%54=levnames4&index
+%55=levnames5&index
+%56=levnames6&index
+%57=offstypenames&index
+%58=mm6enemdatabot
+%69=mm6paldatabot
+%70=mm6pal2databot
+%71=mm4ichrload
+%72=mm4chrload
+%73=scenes_banks&index
+%75=textstrings3
+%76=textstrings4
+%77=textstrings5
+%78=texttable3&index
+%79=texttable4&index
+%80=texttable5&index
+%81=textselect
+%82=textname3&index
+%83=textname4&index
+%84=textname5&index
+%86=enemdmgoffs3
+%87=enemdmgoffs4
+%88=enemdmgoffs5
+%90=weaponname3&index
+%91=weaponname4&index
+%92=weaponname5&index
+%93=mm3_boss_spr
+%94=scenes_data3&index
+%95=scenes_data4&index
+%96=scenes_data5&index
+%98=sprite_group3&index
+%99=sprite_group4&index
+%100=sprite_group5&index
+%101=sprite_group6&index

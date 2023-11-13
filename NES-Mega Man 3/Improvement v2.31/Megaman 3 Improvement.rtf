@@ -1,0 +1,376 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fmodern\fprq1\fcharset0 Courier New;}}
+{\colortbl ;\red0\green0\blue0;\red255\green0\blue0;\red0\green0\blue255;\red0\green128\blue0;\red0\green255\blue0;}
+{\*\generator Msftedit 5.41.15.1515;}\viewkind4\uc1\pard\qc\cf1\ul\b\f0\fs28 Megaman/Rockman 3 fixes/improvements patch\cf2\fs20\par
+\pard\cf0\ulnone\b0\par
+- kuja killer on many forums - acmlm board, romhacking.net,  rockmanpm, youtube, etc\par
+\par
+- Mike [401K4svwHuWM] @ 2ch Remodelling Rockman Thread\par
+----------------------------------\par
+\cf3\b Feburary 14, 2022 -\cf0\b0  Version 2.31 - Few minor edits\par
+\par
+\cf3\b July     26, 2021 -\cf0\b0  Version 2.3 - New edits/fixes\par
+\par
+\cf3\b December  1, 2019 -\cf0\b0  Version 2.22 - item flash again...\par
+\par
+\cf3\b November 29, 2019 -\cf0\b0  Version 2.21 - Fix item flash\par
+\par
+\cf3\b November 12, 2019 -\cf0\b0  Version 2.2 - More edits\par
+\par
+\cf3\b June      1, 2015\cf0\b0  - Version 2.1 - More edits, truly complete for now\par
+\par
+\cf3\b May      13, 2015\cf0\b0  - Version 2.0 - Large overhaul\par
+\par
+\cf3\b November 15, 2012\cf0\b0  - Version 1.3 - bleh..\par
+\par
+\cf3\b October  19, 2012\cf0\b0  - Version 1.2 - FINAL release!!\par
+\par
+\cf3\b October  15, 2012\cf0\b0  - Version 1.1 - First public release\par
+http://kohada.2ch.net/test/read.cgi/gameurawaza/1345225953/579\par
+A few things added from this post + bug report from #rom-hacking IRC\par
+\par
+\cf3\b October  10, 2012 \cf0\b0 - Version 1.0 - First beta release at 2ch.\par
+\par
+----------------------------------\par
+Please apply to a clean megaman, or rockman 3 ROM. \par
+This is free for public use, and any future mega 3/rock 3 romhacks.\par
+ONLY use the appropriate patch. The rockman 3 patch is ONLY for a  rockman 3 rom, and megaman 3 ONLY for megaman 3 rom.\par
+\par
+I recommend having a backup of your ROM before applying the patch if your using it for a romhack.\par
+\par
+** \b MegaFLE.dat\b0  file is needed for MegaFLE 0.701\par
+** \b MegaFLE X.exe\b0  is a slightly edited copy with CHR and  Multi Path edtiors now included for Megaman 3. These function  exactly like megaman 5. Replace with the original MegaFLE 0.701 in  it's folder. Backup first!\par
+** \b text table.tbl\b0  file is to help with editing story text\par
+** \b Manual fixes.txt\b0  is for people who want to revert the most  commonly complained edits, and/or Rush Jet energy drain.\par
+\par
+Anything marked "\b IMPORTANT\b0 " are major fixes, or improvements to the  game. So please take note of those.\par
+\par
+----------------------------------\par
+\pard\qc\b\fs28 Change log history:\par
+\par
+\pard\cf3\ul\fs20 Feburary 14, 2022\ulnone  \cf0\b0 - Just addressing remaining known softlocks, if you have no rush coil/jet ammo.\par
+\par
+** Address softlock potentials on 1st screens of Doc Spark, Wily 1  (still require rush coil, no softlock), and Wily 3.\par
+\par
+** un-used spikes graphic placed in last hallway of regular Spark  Man level, instead of normal spikes.\par
+https://tcrf.net/File:MegaMan3_UnusedSparkManSpikeTiles.png\par
+\par
+----------------------------------\cf3\ul\b\par
+\par
+July  26, 2021\ulnone  \cf0\b0 - Some more fixes and edits I intended to do in the past, and did for the romhack \b Megaman 3 Revamped\b0  after Ver 2.22 +  Few more un-used graphics found and restored.\par
+\par
+** Some more lag reduction\par
+\par
+** Weapon swapping with select button now has Select + Up/Down - to  cycle weapons left or right, instead of only right previously.\par
+\par
+** un-used 3-frame breakman scarf animation discovered, added to  mugshot on stage select\par
+https://tcrf.net/File:MegaMan3_UnusedBreakManMugshotAnimation.png\par
+\par
+** un-used 2-frame animation of 5 birds flying together, added to  game ending when megaman looks at protoman in sky + mini wily ship\par
+https://tcrf.net/File:MegaMan3_EndingBirds.gif\par
+\par
+** un-used Snakeman jump-shoot tail added. Displayed for 12 frames.\par
+https://themechanicalmaniacs.com/articles/mm3mysteries.php#Graphics\par
+\par
+** un-used spark shock for sparkman battle - applied to mm when hit.\par
+https://themechanicalmaniacs.com/articles/mm3mysteries.php#Graphics\par
+\par
+** A 2nd softlock addressed, before Flash Man boss room.\par
+\par
+** Disabled hitbox of hard knuckle walls, when explode animation is  active. This was found from romhack \b "Megaman at the Tokyo Olympics"\b0\par
+\par
+** Fixed top of giant snake midboss so you can't pass with Rush Jet.\par
+\par
+** Fixed penguin egg's explosion repelling shots.\par
+\par
+** Fixed 1-frame tile glitch on all boss fights when they spawn.  This was most noticeable on Wily 1, and Gamma's head.\par
+\par
+** Fixed lifebar display glitch on 1st form of wily machine where it  shows full HP for 1 frame, then normal. When shooting the cannon.\par
+\par
+** Fixed megaman glitched when entering boss rooms with Rush Marine.\par
+\par
+** Fixed dieing on same frame you start a down-scroll, where music  stops playing, and you don't actually die. Doc Shadow for example.\par
+\par
+** Added breathing bubble for Rush Marine, shared with base water.  Marine has his own un-used type, but animation data was in-complete.\par
+\par
+** Face megaman to the right after gamma battle. This can not be  done for the laying on ground frame as it does not have "right" data\par
+\par
+** Trash blocks (Sparkman/Doc) easier to pass by, after destroyed.\par
+\par
+** Proper jump animation for Woodman/Quickman at start of battle.\par
+\par
+** Music will fade out when exiting completed levels, and after  defeating any of the game's boss fights.\par
+\par
+** Adjusted hitboxes of some things to more accurate sizes. They are  usually slightly larger than the sprites themselves.\par
+   ** geminiman, snakeman, leaf sheild (woodman), large spark shock  (sparkman), seperated turtle shells (wily 1), hedgehog rolling ball\par
+\par
+** Water splash \cf4\b Sound ID #2F\cf0\b0  for Wily 1 turtles, and submarine's missles moving outside water\par
+\par
+** Bullet shoot \cf4\b Sound ID #3E\cf0\b0  for Geminiman, and Wily Machine bullets\par
+\par
+** NEW - \cf4\b Sound ID #3F\cf0\b0  - Needle sound for Hedgehog and Needleman's  needles\par
+** NEW - \cf4\b Sound ID #40\cf0\b0  - Missle sound for Missle Launcher, and bullet  cloud enemies\par
+--------------------\par
+For romhack author's making new Megaman 3 hacks in the future\par
+\par
+** \b IMPORTANT!!\b0  Slippery Ice/Floors TSA Block property can be added  to levels. This is Type B on the TSA Table editor screen. Imported coding from my un-finished \b Megaman Odyssey\b0 .\par
+\par
+** 8 Multi paths settings supported now instead of 4.\par
+\par
+** All level's screen data edited in MegaFLE. To make it safer for  authors to edit extra screens. Previously, unused "screen preset"  and scroll maps were harmful corrupt data in un-modified megaman 3.\par
+\par
+** Auto detect enemy position # when spawning at checkpoints instead  of reading from level data. Many megaman 3 hacks had softlocks at  boss rooms, from not updating checkpoints after add/remove enemies.\par
+\par
+** All existing enemy types now have their own base horizontal X  speed, instead of being shared by multiple enemies.\par
+Tables at \b $610-$69F\b0  (low byte) and \b $710-$79F\b0  (high byte)\par
+----------------------------------\par
+\par
+\cf3\ul\b December  1, 2019\ulnone  \cf0\b0 - Attempt to fix item flash.. take 2\par
+\par
+** Stupid item flash again... This time megaman would not flash anymore during the "get hit by enemy" animation. Fixed that.\par
+Thanks \cf2\b diablo666\par
+\cf0\b0\par
+----------------------------------\par
+\par
+\cf3\ul\b November 29, 2019\ulnone  \cf0\b0 - Attempt to fix item flash\par
+\par
+** Fixed energy flash bug hopefully. Very shameful mistake I did not  notice, ugh.\par
+\par
+** Fixed Weapon Icons from being glitched if you swap by jumping at  the top of screen + Start of levels, and breakman battle.\par
+\par
+----------------------------------\par
+\par
+\cf3\ul\b November 12, 2019\ulnone  \cf0\b0 - Updated again with some more fixes, etc.\par
+\par
+\b ** IMPORTANT!!\b0  - Multi path and CHR animation editors added to Misc Editor screen for MegaFLE, both function exactly like megaman 5.\par
+\par
+Please place sprite \cf4\b type 28 \cf0\b0 with Y position as the ID number (80, 81, 82, etc) to start animations, and \cf4\b type 29 \cf0\b0 with Y position 0 to disable animations. See gemini man for example. (bubble fish from gameboy megaman 3)\par
+\par
+\b ** IMPORTANT!!\b0  - Wily 3 and 5 no longer shared level data. Both are seperate levels now, and can be designed with a full 32 screens if desired.\par
+\par
+** Removed a block after Flashman battle in Doc Gemini, to prevent softlock.\par
+\par
+** MM Clone Boss edited to make the very 1st clone set random, "not" start with only top.\par
+\par
+** Item drops will blink for 1 second when close to disappearing, instead of instant.\par
+\par
+** Preload Palette animation for Boss refight room before scrolling into it. Originally showed grey's until screen fully scrolled in.\par
+\par
+** Fixed Hard Knuckle from freezing megaman for a long time in the Boss refights when you defeat a boss on final hit.\par
+\par
+** Fixed Screen wrapping with top of screen. example: Cant grab weapon refills in Doc Needle from the top of screen when there at the bottom. Megaman will not be damaged by enemies either at the bottom.\par
+\par
+** Fixed Gemini Laser "off-screen". Now despawns properly the instant it goes off screen at the top so you may shoot again, and not wait.\par
+\par
+----------------------------------\par
+\par
+\cf3\ul\b June   1, 2015\cf0\ulnone\b0  - Final update once and for all. Many more edits.\par
+\par
+**\b  IMPORTANT!!\b0  - Weapon Icons for weapon switching \ul Megaman 10 style\ulnone . Graphics located at \b $A5010-$A700F\b0 . Original graphics un-touched.\par
+\par
+**\b  IMPORTANT!!\b0  - \ul Top Spin\ulnone  no longer drains all energy randomly.\par
+\par
+** More lag reduction. About 15% less lag on average than Ver 2.0!\par
+\par
+** Fixed bug where megaman is standing still in the air when any boss is defeated + landing sound effects for all battles and wily battles.\par
+\par
+** Fixed bug with Rock Monster's rocks being thrown after its killed.\par
+\par
+** Protoman song plays fully now in the game ending until Staff Roll.\par
+\par
+** Rush Marine/Jet teleport away with no energy instead of disappear.\par
+\par
+** You can now shoot 3 bullets instead of 2 with all Rush forms.\par
+\par
+** Selecting Breakman on Stage Select fades out instead of instant.\par
+\par
+** Wily Intro moon background scrolls slowly now when wily is flying.\par
+\par
+** Black bar on left edge of screen disabled for Weapon Pause Menu, now the left border shows + Rush Marine's "cut off" propeller tile.\par
+\par
+** Gemini planet added to the Gemini levels with custom pal fade.\par
+ \cf2\b CAUTION!!\cf0  -\b0  This might affect romhacks very slightly a tiny bit.\par
+\par
+** Several sounds in ending with falling rocks on megaman/wily. This is just to try giving some life into the scene.\par
+\par
+** Defeated  \cf4\b Sound ID #17 \cf0\b0 for Gamma's head + Gamma's hand on megaman.\par
+\par
+** Explosion \cf4\b Sound ID #27 \cf0\b0 for Giant Metool, Wily Machine.\par
+\par
+** Explosion \cf4\b Sound ID #2F \cf0\b0 for giant bee's beehive, breakable walls, rock monster's rocks.\par
+\par
+** Teleport  \cf4\b Sound ID #34 \cf0\b0 for Protoman in game ending, megaman leaving light's lab, teleporters in Wily 4.\par
+\par
+** Flash Stopper \cf4\b Sound ID #3B \cf0\b0 for Holographic enemy's starfield.\par
+\par
+----------------------------------\par
+\par
+\cf3\ul\b May   13, 2015\ulnone  \cf0\b0 - Updated after 2+ years. Story + un-used goodies.\par
+\par
+** \b IMPORTANT!! \b0 - Story Intro added to the game before title screen.  Both Japanese and English. -- Credits:\par
+Graphics: \cf2\b PStart, MegaManUSA\par
+\cf0\b0 Story, typo's/grammar: \cf2\b Thanatos-Zero + Various others\cf0\b0 , from Board 2\par
+Japanese Revision: \cf2\b Puresabe\cf0\b0\par
+Programming: \cf2\b kuja killer\cf0\b0\par
+\par
+Original reference from: https://www.youtube.com/watch?v=jMI3KrAMnRM\par
+\par
+** \b IMPORTANT!! \b0 - ROM is upgraded to 768 KB, MMC3 mapper will remain. \par
+\b $40010-$7C00F\b0  is now free space for Programming. \par
+\b $A7010-$C000F\b0  is now free space for Graphics.\par
+\par
+** \b IMPORTANT!! - \b0 Moderate lag reduction. Up to \ul\b 70% LESS\ulnone\b0  at times, based on extensive testing with tools and resources.\par
+   ** Items no longer use gravity. Reduces lag considerably!! Item drops from enemies are un-affected.\par
+\par
+** \ul\b Rock3 FixPack patch\ulnone\b0  by \cf2\b Puresabe\cf0\b0  used. A fix to FlashMan (multiple hits), Yellow Devil (hit judgement), Giant Metool (item drop).\par
+\par
+** \b IMPORTANT!! - \ul Rock3 Multipath patch\ulnone\b0  by \cf2\b Rock5easily\cf0\b0  used. Up to 4 Multipaths can be used for every stage. ($A60-$A6F * 2000) per stage. See the README text in the original zip file, this patch has \b already\b0  been applied manually. Instructions are in Japanese. \par
+\par
+Short version: Format is exactly the same as Megaman 5.\par
+https://www.himaq5.xyz/rock5easily/archive/rock3_multipath.zip\par
+\par
+** Reversed "Shoot when climbing ladders". Most people dont like it.\par
+\par
+** SaveRAM enabled.\par
+\par
+** Tail Wagging animation for Rush Coil. (During gameplay)\par
+\par
+** un-used Rush Marine's "open mouth" animation added\par
+\par
+** un-used Water Bubble breathing added\par
+\par
+** un-used jumping frame found for "Hopper" (Enemy ID 26) added\par
+\par
+** un-used scarf animation found for Proto/Breakman, added to Gemini\par
+** un-used jump+shoot animation (Breakman only), added\par
+\par
+** un-used Magnet Missle "turning" frame added for Magnetman, and Megaman. Displays for 4 frames before straight up/down frame. Megaman's version does not stop, in order to maintain hit accuracy.\par
+\par
+** Several edits to Password screen: 1) \b Error noise \b0 for "password error" - 2) \b B button support \b0 to return to options, with grey-out effect - 3) \b Force "continue" \b0 at Wily stages, deleted Stage Select.\par
+\par
+** Palette color animations no longer "stop" during forced scrolls.\par
+\par
+** Teleport animation triggered when Proto/Breakman lands on ground before battle. Appears in stand-still pose for only 1 frame.\par
+\par
+** Fixed bug for "halographic" enemy. Starfield no longer disappears when open/close pause menu. it's not perfect, but should be OK.\par
+\par
+** Fixed bug for very many enemies and bosses - sprite projectiles not being deleted if they go above the top edge of screen\par
+\par
+** Fixed bug with Hardman softlocking game when killed. Japanese Ver\par
+\par
+** Fixed very rare bug when closing pause menu on Giant Snake enemy\par
+\par
+** Wily Castle song play's in it's entirety 1 time, wily intro.\par
+\par
+** Megaman Bullet \cf4\b Sound ID #15\cf0\b0  for Megaman Replicator Boss (Wily 3)\par
+\par
+** Cannon   Shoot \cf4\b Sound ID #1E \cf0\b0 for Giant Metool.\par
+\par
+** un-used "ding" \cf4\b Sound ID #31 \cf0\b0 plays at end of level for Pause Menu instead of normal pause menu. 2 sounds CANNOT play at the same time.\par
+\par
+** NEW - \cf4\b Sound ID #3D \cf0\b0 - Air Shooter sound for Doc Air fight - Credit  to \cf2\b Tsurara\cf0\b0  and \b Rockman X Cross \b0 (Rockman 5 hack)\par
+** NEW - \cf4\b Sound ID #3E \cf0\b0 - Bullet shoot sound (megaman 6) for metools, snakes, proto/breakman, yellow devil\par
+\par
+----------------------------------\par
+\par
+\cf3\ul\b November 15, 2012\ulnone  \cf0\b0 - Update from \cf2\b Satoshi Matrix \cf0\b0 that wanted to put  this on a real NES cart.\par
+\par
+** English Version: Text script errors fixed - \par
+Wiley to Wily, Dr. Right to Dr. Light, Proto Man to Protoman\par
+\par
+** Glitch fixed for both wily battles where Megaman walks backwards  facing the wrong direction if you kill wily in certain positions.\par
+\par
+** Flame sound effect added to Heatman battle - Only when he rushes  across the screen.\par
+\par
+----------------------------------\par
+\par
+\cf3\ul\b October 19, 2012\ulnone  \cf0\b0 - Fixed accident reported by \cf2\b Puresabe\cf0\b0 , Japanese Ver\par
+\par
+** \b IMPORTANT!! \b0 - \ul\b Petitfixing patch\ulnone\b0\i  \i0 added from \cf2\b Puresabe\cf0\b0 , changes to  megaman's physics.\par
+\par
+- Touching Down shot, Stopping Shot, Turning Shot, Short Slide Jump,  Soft air brake\par
+\par
+** Breakman transformation added to proto's appearance in gemini\par
+** City background shifted down - Wily Intro\par
+** Fixed tiny bug with weapon switching reported by \cf2\b Thanatos-Zero\cf0\b0\par
+** Rush Marine can be called on Land now. For level-design purposes.\par
+\par
+** NEW - \cf4\b Sound ID #3B \cf0\b0 - Flash Stopper  sound for Doc Flash fight\par
+** NEW - \cf4\b Sound ID #3C \cf0\b0 - Crash Bomb 1   sound for Doc Crash fight +  normal explosion\par
+\par
+----------------------------------\par
+\cf3\ul\b October 12-15, 2012\ulnone  \cf0\b0 - FINAL, this patch will not be updated anymore.\par
+\par
+** \b IMPORTANT!! \b0 - Weapon switching with Select button. Only possible  to cycle the weapons to the right.\par
+\par
+** \b IMPORTANT!! \b0 - Rush Jet no longer works in water. Only marine is  allowed in water, while Rush jet can be used anywhere else.\par
+\par
+** NEW - \cf4\b Sound ID #3A \cf0\b0 - Metal Blade sound for Doc Metal fight\par
+\par
+** Boss Lifebar moved to right side of screen, megaman X-style\par
+\par
+** Collecting life and weapon enegery is instant, rather than 1  pixel at a time. It does not stop megaman's movement.\par
+\par
+** Weapons/Rush on the screen will not be deleted, if menu is closed  "without" changing your current weapon.\par
+\par
+** Menu can be always be opened now, even if weapons are on-screen.\par
+\par
+----------------------------------\par
+\cf3\ul\b October 10, 2012\ulnone  \cf0\b0 - First Release\par
+\cf4\b Weapon Menu:\par
+\cf0\b0\par
+** \b IMPORTANT!! \b0 - The ability to exit stages if they have been  completed. Only the robot master, and doc robot stages are  compatible. Protoman battle, Wily levels can NOT be exited.\par
+\tab\par
+   ** Please press the \b SELECT\b0  button to access for the above\par
+\par
+** Last 8 pixels of menu are now shown, originally was cut-off.\par
+\par
+** Fixed bug when life is full, and you use a E-Tank. Originally you  lose 1, this no longer happens. Instead, it plays the error noise.\par
+\par
+** \b IMPORTANT!! \b0 - Rush Jet/Marine glitch fixed. You can no longer  access them "early" anymore.\par
+\par
+** \b IMPORTANT!! \b0 - Bug with ladders fixed concerning pause menu.\par
+   Megaman will no longer fall off ladders when un-pausing weapon      menu. The teleport he does has been deleted, except Rush Marine.\par
+----------------------------------\par
+\par
+** Scanline glitch fixed on Weapon Menu screen, Stage Select (on Shadow Man picture), Wily Machine battle, Wily-Gamma battle, Game Ending (Right side of grass field)\par
+----------------------------------\par
+\par
+** \b IMPORTANT!!\b0  - Controller 2 Debug is now completely disabled.\par
+-----------------------------------\par
+\par
+** Bug with ladders fixed. You could press down at bottom of ladder, and it would cause megaman to grab it, when it should be up button.\par
+\par
+** Bug with shooting backwards fixed on teleporters. Wily 4 Stage\par
+-----------------------------------\par
+\cf4\b Sound effects added:\par
+\cf0\b0\par
+** Sparkman has 2 sound effects added when he does his spark attacks\par
+\par
+** Geminiman's lasers now make the laser sound effect when he shoots\par
+\par
+** Teleport sound added when megaman shows up in dr light's lab, and protoman/breakman battles when he shows up + gemini man appearance\par
+\par
+** Explosion \cf4\b Sound ID #27\cf0\b0  added to exploding bombs from Penguin enemy, exploding torpedo's from Submarine enemy, gernades from Shadow Man, turtle shells from turtles (wily 1 boss).\par
+\par
+** NEW - \cf4\b Sound ID #39 \cf0\b0 - Error noise from megaman 4+ added. Used on  E-Tanks when you have 0, and exit stage function, when you have not  completed a level yet.\par
+------------------------------------\par
+\cf4\b Gemini Man:\par
+\cf0\b0\par
+** Edit to star scrolling. 1 layer goes faster/slower than the other\par
+** \b IMPORTANT!! \b0 - Protoman event skip is fixed in Gemini man\par
+------------------------------------\par
+\cf4\b Wily intro:\cf5\par
+\cf0\b0\par
+** City        background added to wily intro 1 - UNUSED\par
+** Star + Moon background added to wily intro 2 - UNUSED\par
+------------------------------------\par
+\cf4\b Title screen/stage select:\par
+\cf0\b0\par
+** \b IMPORTANT!! \b0 - All levels can be re-entered now even if they're  completed. Boss will not show up at end of level after completed.\par
+\par
+** Megaman graphic added to title screen, originally only appeared  on Japanese rockman 3. Now here on megaman 3. - English only\par
+** Trademark + capcom on main screen - English only\par
+** Cursor sound effect when moving between GAME START and  PASSWORD\par
+------------------------------------\par
+}
+ 

@@ -1,0 +1,87 @@
+-------------------------------------------------
+This is a list of all the possible remaining un-used animation frames I found in all the animation data banks. The game does not call these with any code.
+-------------------------------------------------
+unused frames remaining
+$2A000 area ---
+
+unused frame ids:
+
+flash man stars, no animation data
+1F: flash man stars
+20: flash man stars
+21: flash man stars
+
+pointer 84B8: 00 08 AF
+AF: get hit frame - the frame is NOT unused, but animation data is. Most likely was intended for a wily boss, either megaman clone, yellow devil, or one of the wily forms. 
+
+pointer 84B5: 00 08 BE
+BE: another un-used water bubble, wily 1 boss - Probably for the turtles, but it is supposed to be 2 frames, not 1.
+
+pointer 850C: 00 08 DA
+DA: maybe projectile for Wily machine battle ?? - bank 3D
+
+pointer 853F: duplicate of 2A087/2A107
+This is the ONLY single spot for 1 free animation space
+-------------------------------------------------
+unused frames remaining
+$34000 area ---
+
+unused frame ids:
+00 08 23
+23: a large graphic of megaman seen from his backside. See my explanation here:
+https://themechanicalmaniacs.com/articles/mm3mysteries.php#Graphics
+
+pointer 8386: 00 08 24
+24: unknown
+
+66: duplicate of 67 (submarine enemy) - bank E
+
+pointer 8496: 00 08 74
+74: unknown, maybe energy item frame
+
+00 08 9A
+9A: mysterious type of platform!? - bank 9
+
+AC, AD: duplicate of AE - bank 16
+
+D0-D6: duplicate of D7 water splash, free space
+
+FF: unknown glitch, does not belong to ANY graphic page
+
+-------------------------------------------------
+unused frames remaining
+$36000 area ----
+
+un-used protoman shooting while on ground
+03 06 1F 20 21 22
+
+un-used protoman's custom "get hit" animation
+09 02 25 3A 3A 25 3A 3A 25 3A 3A 25
+
+-----------------------
+
+un-used breakman shooting while on ground
+03 06 32 33 34 35
+
+un-used breakman's custom "get hit" animation
+09 02 39 3A 3A 39 3A 3A 39 3A 3A 39
+
+-----------------------
+un-used water bubble, found right next to rush marine data. Un-fortantely, it's missing 1 frame.
+
+00 08 A0
+-----------------------
+A type of block, but tiles are arranged wrong for some reason.
+pointer 847D: 01 06 C4 C5
+
+un-used cocoon egg in pairs of 2 each. May have been meant for bee's
+pointer 8481: 00 08 C6
+-----------------------
+a copy of spinning top frame 1, at end of Top Man. But no animation.
+00 02 D5
+-----------------------
+remaining un-used frame ids:
+
+7A: duplicate of 7B (door thing in gemini man / proto appearance)
+86: duplicate of 87 (halographic enemy)
+8A, 8B: stars for halographic enemy. the game does not load sprite objects for them. It's done through code, same with flash man stars.

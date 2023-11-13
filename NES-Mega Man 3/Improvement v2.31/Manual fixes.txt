@@ -1,0 +1,47 @@
+Reverting some edits
+This text file is intended for some people who do not like some of the edits done for Megaman 3 Improvement and want to put them back.
+--------------------------
+** Rush Jet energy fix. This will force the weapon energy to drain if you're not currently standing on Jet.
+I chose "not" to ever fix this because I felt it would have been a very highly un-popular edit, that alot of people might dislike.
+
+If you wish to fix this manually, edit these:
+
+387A3: (english)
+20D8DE
+
+7CDD6: (english)
+69
+
+38781: (japanese)
+20 D0 DE
+
+7CDD6: (japanese)
+65
+--------------------------
+** Remove un-used spark shock animation + freeze AI from mini sparks in Sparkman's battle
+
+C970: (english)
+4C8598
+
+C970: (japanese)
+4C6398
+--------------------------
+** Boss Lifebar to original spot on left side of screen
+
+7F32D (english) or 7F325 (japanese):
+28
+
+--------------------------
+** Restore original energy lifebar filling process, instead of instant:
+
+3BE8B: (english) or 3BE49: (japanese)
+B9A20018690199A200A91C209AF8C60FF00B206EFDA5952903D0F7F0DA
+
+--------------------------
+ding sound back to normal weapon menu sound:
+
+Note: I included this because it exists and is heard on Megaman Anniversary Collection for playstation 2/gamecube. It did not play on the NES, cause these 2 sounds try to play on the same frame.
+
+4177: (japanese and english)
+208EA1
+--------------------------
