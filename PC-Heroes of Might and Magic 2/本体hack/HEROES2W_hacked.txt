@@ -1,0 +1,73 @@
+使用说明：
+将exe文件放到游戏根目录。注意不要与dll补丁同时使用。
+
+修改说明：
+1、水井增长量改2为1
+2、除龙和泰坦外所有生物的growth增加1
+3、禁止人类玩家招募鬼怪
+4、农民HP改1为2，速度改2为3。农民产量改为11，这样总产量是11+1=12，比原游戏12+2少2
+5、地牢建造成本改3000金为6000金
+
+
+
+笔记：
+育碧中文版英雄无敌2：
+DATA文件夹
+GAMES文件夹
+HELP文件夹
+HEROES2文件夹（零长度视频文件，节省空间）
+Journals文件夹（GOG版）
+MAPS文件夹（黄金版地图来自GOG版）
+MUSIC（删除ogg音乐文件，节省空间）
+MSS32.DLL（英雄无敌3版）
+SMACKW32.DLL（GOG版）
+
+1 - 黄金版中文汉化版 v2.3.8 (ACACIA)
+winmm.dll（acacia黄金增强版v2.3.8版附带，使用Verok.dll貌似这个无作用）
+Verok.dll
+
+4 - 辅助工具
+WING32.DLL（https://www.homm2.com/downloads）提供的用于x64系统运行用dll
+
+插件补丁：
+Plugins文件夹
+patcher_x86.dll
+Loader.asi
+
+UBP.exe（exe修改器，1.3版）
+HEROES2W.EXE（GOG原版）
+HEROES2W_hacked.EXE（基于GOG原版的部分补丁集成版，详见下文“本体hack”）
+
+WING32.dll和WINMM.dll（Verok的opengl wrapper文件，可将游戏绿化）
+其它文件\注册表修复.reg（不使用插件也可免CD用，老系统需要）
+
+
+论坛：
+http://heroescommunity.com		sandruse		l
+handbookhmm.ru				akplus		l
+heroes2.forumactif.com			sandruse		l
+roundtable
+hack用
+IDA		winhex		beyondcompare	汇编指令机器码对应表	Stud_PE
+https://gregstoll.com/~gregstoll/floattohex/		浮点数16进制
+https://tool.oschina.net/hexconvert/			16进制转换
+http://abusemynipples.biz/misc/h3_hacking.txt	H3 hack guide
+
+本体hack笔记：
+1、农民血量1改2，速度2改3
+F0400：01 00 00 02 -> 02 00 00 03
+2、绿、红、黑龙和泰坦增长率1改0
+F078D：01 -> 00
+F07A7：01 -> 00
+F07C1：01 -> 00
+F0891：01 -> 00
+F08AB：01 -> 00
+3、地牢建造需要金币3000改6000
+F20EC：B80B -> 7017
+4、禁止招募鬼魂
+8C2EE：E9 5D 00 00 00 -> E9 4D CC 05 00 修改跳转逻辑至空位置
+E8F40：此处往后原值均为00
+8B 45 EC 部分原逻辑
+89 45 E4部分原逻辑
+B8 00 00 00 00 使招募数量的判断条件为0
+E9 0A 34 FA FF 跳回原先的逻辑
