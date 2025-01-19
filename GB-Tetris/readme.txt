@@ -38,7 +38,7 @@ Random once, then check if the NEXT is same as PREVIEW or CURRENT. If it's false
 Check if the NEXT is same as PREVIEW or CURRENT. If it's false then use the NEXT, or Random thirdly and use the new NEXT.
 SP--0.58%    EP--19.53%    NEITTP--10.20%
 
-Tetris NES:
+Tetris NES ? :
 SP--3.57%    EP--16.07%    NEITTP--17.34%
 
 Tetris GB:
