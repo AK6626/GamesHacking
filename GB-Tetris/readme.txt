@@ -34,7 +34,8 @@ Random once, then check if the NEXT is same as PREVIEW or CURRENT. If it's false
 SP--2.04%    EP--16.33%    NEITTP--13.14%
 
 4) 2H3R
-Random once, then check if the NEXT is same as PREVIEW or CURRENT. If it's false then use the NEXT, or random again and use the new NEXT.
+Random once, then check if the NEXT is same as PREVIEW or CURRENT. If it's false then use the NEXT, or Random again.
+Check if the NEXT is same as PREVIEW or CURRENT. If it's false then use the NEXT, or Random thirdly and use the new NEXT.
 SP--0.58%    EP--19.53%    NEITTP--10.20%
 
 Tetris NES:
