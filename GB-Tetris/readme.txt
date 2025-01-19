@@ -31,7 +31,7 @@ SP--2.04%    EP--16.33%    NEITTP--16.82%
 
 3) 2H2R
 Random once, then check if the NEXT is same as PREVIEW or CURRENT. If it's false then use the NEXT, or random again and use the new NEXT.
-SP--2.04%    EP--16.33%    NEITTP--13.14%
+SP--4.08%    EP--18.37%    NEITTP--13.14%
 
 4) 2H3R
 Random once, then check if the NEXT is same as PREVIEW or CURRENT. If it's false then use the NEXT, or Random again.
