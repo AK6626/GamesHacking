@@ -15,9 +15,10 @@ As a result, piece shapes containing many zeros appear less frequent. The relati
 This hack provides 4 new randomizer patches. Chose one you like to use.
 In a Tetris GB game there are three kinds of pieces. The CURRENT which is under using. The PREVIEW which is shown in the little window. The NEXT which will be given by the randomizer.
 Here We difine 3 concepts to simply show what the patch do.
-First is SP (same probability). The probability that the randomizer give a piece just same as the one before.
-Second is EP (expected probability). The probability that the randomizer give a piece you just want and this piece should not be same as the one before.
-Third is NEITTP (no expected in ten turns probability). The probability that you can't get what you want in successive ten turns.
+
+SP (same probability). The probability that the randomizer give a piece just same as the one before.
+EP (expected probability). The probability that the randomizer give a piece you just want and this piece should not be same as the one before.
+NEITTP (no expected in ten turns probability). The probability that you can't get what you want in successive ten turns.
 
 1) 0H1R
 Ignore history, just use the NEXT the randomizer given.
