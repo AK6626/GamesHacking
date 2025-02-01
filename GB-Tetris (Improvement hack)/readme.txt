@@ -1,11 +1,13 @@
 Hack Game: Tetris (World) (Rev 1)
-Hack Name: Improvement v1.0
+Hack Name: Improvement v1.01
 Hack File Formant: ips file (You can apply this on your rom file with tool like Lunar IPS or Online Patcher (https://www.romhacking.net/patch/))
 
 Content:
-Things in "Tetris - Classic Harddrop v1.0" are included.
-Faster “delayed auto shift”. First move delay has been changed from $17 to $0f. The held move delay has been changed from $09 to $02.
-A new 2H2R randomizer.
+1) Things in "Tetris - Classic Harddrop v1.0" are included.
+2) Faster “delayed auto shift”. 
+A2 Version. First move delay has been changed from $17 to $0A. The held move delay has been changed from $09 to $02. Just like what SRS do.
+A5 Version. First move delay has been changed from $17 to $0A. The held move delay has been changed from $09 to $05.
+3) A new 2H2R randomizer.
 
 About 2H2R randomizer:
 
