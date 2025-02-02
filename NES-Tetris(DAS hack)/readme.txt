@@ -1,4 +1,17 @@
-Sorry for Chinese only.
+Sorry for some content is Chinese only.
+
+Game Version: Tetris (USA).nes
+Hack Description:
+1) Shorten the display time of the copyright display page.
+2) Change the hex value of the rom to reduce DAS and ARR.
+Tetris (USA) (h, A540).ips: 
+DAS hex value is changed from $10 to $0A.
+ARR hex value is changed from $0A to $05.
+$05 make the move left or right speed higher while not too high.
+Tetris (USA) (h, A840).ips: 
+DAS hex value is changed from $10 to $0A.
+ARR hex value is changed from $0A to $08.
+These make the move left or right speed more like SRS does.
 
 NES游戏：Tetris (USA)
 1、关于DAS、ARR的修改涉及2个位置的数据共3个。
