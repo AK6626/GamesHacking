@@ -1,0 +1,5 @@
+; sandruse 使用ares的#include方法（如下），用外部修改覆盖本文件。
+[#include]
+1=RA2 Classic Mode.ini
+2=Mechanical.ini
+; 3=Yuri's Revenge Rebalanced 2.1.ini
